@@ -4,23 +4,25 @@
   * Includes
   *
   **/
-var gulp = require('gulp');
+var gulp      = require('gulp'),
 
-var autoprefixer = require('gulp-autoprefixer');
-var babel = require('gulp-babel');
-var changed = require('gulp-changed');
-var concat = require('gulp-concat');
-var rename = require("gulp-rename");
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
+autoprefixer  = require('gulp-autoprefixer'),
+babel         = require('gulp-babel'),
+changed       = require('gulp-changed'),
+concat        = require('gulp-concat'),
+eslint        = require('gulp-eslint'),
+plumber       = require('gulp-plumber'),
+rename        = require('gulp-rename'),
+sass          = require('gulp-sass'),
+sourcemaps    = require('gulp-sourcemaps'),
+uglify        = require('gulp-uglify');
 
 /**
   * All relevent paths
   *
   **/
-var dest = './assets/';
-var src = {
+var dest  = './assets/';
+var src   = {
   fonts   : './_src/fonts/**',
   images  : './_src/images/**',
   js      : './_src/js/app.js',
@@ -33,6 +35,7 @@ var src = {
   **/
 gulp.task('styles', function () {
   gulp.src(src.scss)
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
         outputStyle: 'compressed'
@@ -49,6 +52,9 @@ gulp.task('styles', function () {
 
 gulp.task('scripts', function() {
   return gulp.src(src.js)
+    .pipe(plumber())
+    .pipe(eslint())
+    .pipe(eslint.format())
     .pipe(concat('bsco.js'))
     .pipe(babel({ presets: ['es2015'] })) 
     .pipe(gulp.dest(dest))
