@@ -1,0 +1,15 @@
+.DS_Store
+
+bower_components/
+node_modules
+node_modules/
+npm-debug.log
+
+.sass-cache
+.sass-cache/
+
+assets/
+tmp/
+
+config.yml
+theme.lock
