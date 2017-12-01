@@ -1,0 +1,18 @@
+development:
+  password: ""
+  theme_id: "xxx"
+  store: the-baking-supply-co.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+    - _src/
+    - .eslintrc
+    - .gitignore
+    - config_example.yml
+    - gulpfile.js
+    - node_modules/
+    - package.json
+    - package-lock.json
+production:
+  password: ""
+  theme_id: ""
+  store: the-baking-supply-co.myshopify.com
