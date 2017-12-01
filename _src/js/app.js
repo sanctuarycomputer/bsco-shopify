@@ -4,7 +4,7 @@
   */
 class App {
   constructor() {
-    console.log('Hello, Weirld. BSCo 2017 Initialized');  // eslint-disable-line no-console
+    console.log('Hello, Weirld. BSCo 2017 Initialized');
   }
 }
 

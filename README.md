@@ -12,6 +12,8 @@
 
     npm install
 
+Make sure that Webpack, PostCSS CLI, Node-SASS, and CleanCSS CLI are properly installed for CLI usage by `npm scripts`.
+
 #####ThemeKit Setup
 
 First install the latest version of ThemeKit:
@@ -27,4 +29,4 @@ Create a new API identity on [Shopify Private App Manager](https://the-baking-su
 
 ###2. Up and Running
 
-You now have everything you need to make changes to the live theme. Simply running `gulp` will compile all SCSS and JS source files along with uploading all asset and template file changes to Shopify.
+You now have everything you need to make changes to the live theme. Simply running `npm start` will compile all SCSS and JS source files along with uploading all asset and template file changes to Shopify.
