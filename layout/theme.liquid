@@ -32,7 +32,7 @@
 
   {% include 'social-meta-tags' %}
 
-  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'bsco.css' | asset_url | stylesheet_tag }}
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -67,7 +67,7 @@
 
   {% section 'header' %}
 
-  <main role="main" id="MainContent">
+  <main role="main" id="main">
     {{ content_for_layout }}
   </main>
 

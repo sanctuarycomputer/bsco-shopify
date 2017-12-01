@@ -16,3 +16,5 @@ production:
   password: ""
   theme_id: ""
   store: the-baking-supply-co.myshopify.com
+  timeout: 60s
+  readonly: true

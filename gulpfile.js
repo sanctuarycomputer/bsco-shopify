@@ -1,5 +1,6 @@
 'use strict';
 
+
 /**
   * Includes
   *
@@ -11,11 +12,13 @@ babel         = require('gulp-babel'),
 changed       = require('gulp-changed'),
 concat        = require('gulp-concat'),
 eslint        = require('gulp-eslint'),
+gutil         = require('gulp-util'),
 plumber       = require('gulp-plumber'),
 rename        = require('gulp-rename'),
 sass          = require('gulp-sass'),
 sourcemaps    = require('gulp-sourcemaps'),
 uglify        = require('gulp-uglify');
+
 
 /**
   * All relevent paths
@@ -28,6 +31,20 @@ var src   = {
   js      : './_src/js/app.js',
   scss    : './_src/scss/app.scss',
 };
+
+var watch = {
+  js: [
+    './_src/js/*.js',
+    './_src/js/**/*.js',
+  ],
+  scss: [
+    './_src/scss/*.scss',
+    './_src/scss/**/*.scss',
+  ],
+  images: './_src/image/*.{jpg,jpeg,png,gif,svg}',
+  fonts: './_src/font/*.{eot,svg,ttf,woff,woff2}'
+};
+
 
 /**
   * Tasks
@@ -75,16 +92,18 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest(dest))
 });
 
+
 /**
   * Watch setup
   *
   **/
 gulp.task('watch', function () {
-  gulp.watch(['./_src/scss/*.scss', './_src/scss/**/*.scss'], ['styles']);
-  gulp.watch(['./_src/js/*.js', './_src/js/**/*.js'], ['scripts']);
-  gulp.watch('./_src/image/*.{jpg,jpeg,png,gif,svg}', ['images']);
-  gulp.watch('./_src/font/*.{eot,svg,ttf,woff,woff2}', ['fonts']);
+  gulp.watch(watch.scss, ['styles']);
+  gulp.watch(watch.js, ['scripts']);
+  gulp.watch(watch.images, ['images']);
+  gulp.watch(watch.fonts, ['fonts']);
 }); 
+
 
 /**
   * Default setup
