@@ -12,11 +12,11 @@
     "clean-css-cli": "^4.0.12",
     "exports-loader": "^0.6.4",
     "imports-loader": "^0.7.1",
-    "node-sass": "^4.5.0",
+    "node-sass": "^4.7.2",
     "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1",
     "postcss-cli": "^2.6.0",
-    "webpack": "^2.3.3"
+    "webpack": "^2.7.0"
   },
   "babel": {
     "presets": [
@@ -40,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/sanctuarycomputer/bsco-shopify/issues"
   },
-  "homepage": "https://github.com/sanctuarycomputer/bsco-shopify#readme"
+  "homepage": "https://github.com/sanctuarycomputer/bsco-shopify#readme",
+  "dependencies": {
+    "clean-css": "^4.1.9"
+  }
 }
