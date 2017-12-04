@@ -4,7 +4,11 @@
   **/
 @import 'vendor/basscss';
 
-@import 'type/fonts';
+/**
+  * Base design system
+  *
+  **/
+@import 'base/colors';
 
 * {
   font-family: "GT America Mono", monospace;
