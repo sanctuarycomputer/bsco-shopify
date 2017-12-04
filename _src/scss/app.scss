@@ -22,15 +22,11 @@
   * Components and modules
   *
   **/
-@import 'components/homepage-hero';
+@import 'components/nav';
 @import 'components/footer';
 
+@import 'components/homepage-hero';
 
-/**
-  * Global Components
-  *
-  **/
-@import 'components/nav';
 
 * {
   font-family: "GT America Mono", monospace;
