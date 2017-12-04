@@ -1,3 +1,18 @@
-<nav>
-  <h1>The Baking Supply Co.</h1>
+<nav id="nav">
+  <div class="col-12 flex max-width-4 mx-auto">
+    <div class="col-3">
+      {% include 'logo-cloud' %}
+    </div>
+    <div class="col-6 flex items-center justify-between">
+      {% for link in linklists.main-menu.links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </div>
+    <div class="col-3">
+      <div>
+        <span>{{cart.item_count}}</span>
+        <span>items</span>
+      </div>
+    </div>
+  </div>
 </nav>
