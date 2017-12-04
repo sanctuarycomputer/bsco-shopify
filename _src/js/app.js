@@ -1,10 +1,11 @@
+import ImagePreloader from './ImagePreloader';
 /**
   * Baking Supply Co. App Constructor
   *
   */
 class App {
   constructor() {
-    console.log('Hello, Weirld. BSCo 2017 Initialized');
+    new ImagePreloader();
   }
 }
 
