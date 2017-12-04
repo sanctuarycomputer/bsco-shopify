@@ -1,0 +1,6 @@
+footer {
+  @media #{$medium-up} {
+    .copyright { text-align: left; }
+    .socials { text-align: right; }
+  }
+}
