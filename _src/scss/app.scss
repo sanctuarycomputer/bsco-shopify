@@ -12,6 +12,7 @@
 @import 'base/type';
 @import 'base/utils';
 @import 'base/border';
+@import 'base/breakpoints';
 
 /**
   * Global Components
@@ -29,3 +30,5 @@
 .bebas {
   font-family: "Bebas Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+
+@import 'components/footer';
