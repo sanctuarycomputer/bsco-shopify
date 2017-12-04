@@ -9,6 +9,7 @@
   *
   **/
 @import 'base/colors';
+@import 'base/breakpoints';
 
 * {
   font-family: "GT America Mono", monospace;
@@ -20,3 +21,5 @@
 .bebas {
   font-family: "Bebas Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+
+@import 'components/footer';
