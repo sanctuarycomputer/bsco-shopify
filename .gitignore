@@ -13,3 +13,5 @@ tmp/
 
 config.yml
 theme.lock
+
+package-lock.json

@@ -3,3 +3,16 @@
   *
   **/
 @import 'vendor/basscss';
+
+@import 'type/fonts';
+
+* {
+  font-family: "GT America Mono", monospace;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bebas {
+  font-family: "Bebas Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
