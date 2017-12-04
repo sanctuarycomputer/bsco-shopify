@@ -12,6 +12,7 @@
 @import 'base/colors';
 @import 'base/z-index';
 @import 'base/utils';
+@import 'base/breakpoints';
 @import 'base/variables';
 
 
@@ -20,6 +21,7 @@
   *
   **/
 @import 'components/homepage-hero';
+@import 'components/footer';
 
 
 * {
@@ -32,3 +34,4 @@
 .bebas {
   font-family: "Bebas Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+
