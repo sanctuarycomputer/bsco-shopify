@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const nodeEnv = process.env.NODE_ENV || 'production';
 
@@ -25,6 +26,13 @@ module.exports = {
     ]
   },
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: { glob: './_src/static/**/*' },
+        to: './assets',
+        flatten: true
+      }
+    ]),
     // uglify js
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
@@ -34,6 +42,6 @@ module.exports = {
     // env plugin
     new webpack.DefinePlugin({
       'proccess.env': { NODE_ENV: JSON.stringify(nodeEnv) }
-    })
+    }),
   ]
 };
