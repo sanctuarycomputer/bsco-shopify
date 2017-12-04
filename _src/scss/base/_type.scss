@@ -1,6 +1,39 @@
+.bebas {
+  font-family: 'Bebas', helvetica, sans-serif;
+}
+
+.mono {
+  font-family: 'GT America Mono', helvetica, sans-serif;
+}
+
+.title {
+  font-size: 36px;
+
+  @media #{$medium-up} {
+    font-size: 108px;
+  }
+}
+
+.subtitle {
+  font-size: 22px;
+
+  @media #{$medium-up} {
+    font-size: 52px;
+  }
+}
+
 h3 {
   &.bebas {
     font-size: 1.5em;
     letter-spacing: 0.65px;
+  }
+}
+
+a {
+  @extend .red;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
