@@ -1,0 +1,13 @@
+$z: (
+  'relative': 1,
+);
+
+@function z($index) {
+  @return map-get($z, $index);
+}
+
+@each $index, $value in $z  {
+  .z-#{$index} {
+    z-index: $value;
+  }
+}

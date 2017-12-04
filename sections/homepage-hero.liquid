@@ -1,0 +1,54 @@
+<div class="homepage-hero relative">
+  <div class="homepage-hero-background col col-12 absolute" style="background: url('{{- section.settings.image | img_url: '1900x' -}}') no-repeat center;">
+    <div class="gradient-blue"></div>
+  </div>
+  <div class="homepage-hero-info absolute z-relative col sm-col-4">
+    <span class="white">{{- section.settings.subtitle -}}</span>
+    <span class="hero-title white">{{- section.settings.title -}}</span>
+    <span class="sm-hide red">
+      <a href="">{{- section.settings.link_text -}}</a>
+    </span>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "placeholder": "For Herbal Butters"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "placeholder": "Healthy Baking Kits"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link Text",
+        "placeholder": "Watch our short & confusing video"
+      },
+      {
+        "type": "url",
+        "id": "video",
+        "label": "Video Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage Hero",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}
