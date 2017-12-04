@@ -1,0 +1,17 @@
+#nav {
+  @extend .border-bottom;
+
+  a {
+    text-decoration: none;
+  }
+
+  .link-list {
+    @extend .border-left;
+    @extend .border-right-dashed;
+  }
+
+  .item-count {
+    @extend .bebas;
+    font-size: 60px;
+  }
+}
