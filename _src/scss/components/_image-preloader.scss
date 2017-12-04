@@ -1,0 +1,6 @@
+.preload-image {
+  opacity: 0;
+  &.loaded {
+    opacity: 1;
+  }
+}
