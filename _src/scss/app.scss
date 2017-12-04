@@ -9,7 +9,16 @@
   *
   **/
 @import 'base/colors';
+@import 'base/type';
+@import 'base/utils';
+@import 'base/border';
 @import 'base/breakpoints';
+
+/**
+  * Global Components
+  *
+  **/
+@import 'components/nav';
 
 * {
   font-family: "GT America Mono", monospace;
