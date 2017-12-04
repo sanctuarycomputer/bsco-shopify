@@ -1,0 +1,45 @@
+<div id="press" class="col-12">
+  <div class="std-max-width mx-auto center">
+    <h3 class="bebas">{{section.settings.title}}</h3>
+    <div class="logo-row flex justify-between items-center py4">
+      {% for block in section.blocks %}
+        <span>
+          <img src="{{block.settings.logo | img_url}}"/>
+        </span>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Press",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "placeholder": "Read About Us In Places"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage Press",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}

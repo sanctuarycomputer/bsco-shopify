@@ -1,0 +1,23 @@
+#press {
+  .logo-row {
+    justify-content: space-around;
+
+    span {
+      &:last-of-type {
+        display: none;
+      }
+    }
+  }
+
+  @media #{$medium-up} {
+    .logo-row {
+      justify-content: space-between;
+
+      span {
+        &:last-of-type {
+          display: inline;
+        }
+      }
+    }
+  }
+}
