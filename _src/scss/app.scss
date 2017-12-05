@@ -9,22 +9,28 @@
   * Base design system
   *
   **/
+@import 'base/variables';
 @import 'base/colors';
 @import 'base/z-index';
 @import 'base/breakpoints';
 @import 'base/utils';
 @import 'base/type';
 @import 'base/border';
-@import 'base/variables';
+@import 'base/buttons';
+@import 'base/forms';
 
 
 /**
-  * Components and modules
+  * Global components
   *
   **/
 @import 'components/nav';
 @import 'components/footer';
 
+/**
+  * Route-specific components
+  *
+  **/
 @import 'components/homepage-hero';
 
 
