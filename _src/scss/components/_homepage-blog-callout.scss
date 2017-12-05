@@ -1,0 +1,10 @@
+.homepage-blog-callout {
+  display: none;
+  .image {
+    @include aspect-ratio(4, 3);
+  }
+
+  @media #{$medium-up} {
+    display: block;
+  }
+}
