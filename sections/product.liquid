@@ -9,23 +9,15 @@
   <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
   <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
-  {% if featured_image != blank %}
-    <img src="{{ featured_image | img_url: '480x480' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
-  {% endif %}
+  {% for image in product.images %}
+    <div class="product-hero-slides col col-12">
+      {% if image.src contains '-hero' %}
+        <div class="product-hero-slide" style="background: url({{ image.src | img_url: '1800x' }}) no-repeat center; background-size: cover;"></div>
+      {% endif %}
+    </div>
+  {% endfor %}
 
-  {% if product.images.size > 1 %}
-    <ul>
-      {% for image in product.images %}
-        <li>
-          <a href="{{ image.src | img_url: '480x480' }}" data-product-single-thumbnail>
-            <img src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  <h1>{{ product.title }}</h1>
+  <h1 class="m0">{{ product.title }}</h1>
   <p>{{ product.vendor }}</p>
 
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
