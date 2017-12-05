@@ -1,0 +1,11 @@
+.product-hero-slides {
+  height: 210px;
+
+  @media #{$medium-up} {
+    height: 100vh;
+  }
+
+  .product-hero-slide {
+    height: 100%;
+  }
+}
