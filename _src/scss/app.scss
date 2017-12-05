@@ -4,21 +4,29 @@
   **/
 @import 'vendor/basscss';
 
+
 /**
   * Base design system
   *
   **/
 @import 'base/colors';
-@import 'base/type';
-@import 'base/utils';
-@import 'base/border';
+@import 'base/z-index';
 @import 'base/breakpoints';
+@import 'base/utils';
+@import 'base/type';
+@import 'base/border';
+@import 'base/variables';
+
 
 /**
-  * Global Components
+  * Components and modules
   *
   **/
 @import 'components/nav';
+@import 'components/footer';
+
+@import 'components/homepage-hero';
+
 
 * {
   font-family: "GT America Mono", monospace;
@@ -31,4 +39,3 @@
   font-family: "Bebas Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-@import 'components/footer';
