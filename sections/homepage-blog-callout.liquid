@@ -1,0 +1,44 @@
+<div class="homepage-blog-callout relative">
+  <div class="absolute border-top col-10 std-max-width"></div>
+  <div class="std-max-width col-12 mx-auto clearfix border-top border-right flex">
+    <div class="image col col-3">
+      <div class="content" style="background: url('{{section.settings.image | img_url}}') no-repeat; background-size: contain;">
+      </div>
+    </div>
+    <div class="col col-9 flex items-center justify-center">
+      <a class="inline-block center" href="{{section.settings.blog}}" target="_blank">
+        <h2 class="subtitle bebas red px4">{{ section.settings.link_text}}</h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Blog Callout",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link Text",
+        "placeholder": "For Herbal Butters"
+      },
+      {
+        "type": "url",
+        "id": "blog",
+        "label": "Blog Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage Blog Callout",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}
