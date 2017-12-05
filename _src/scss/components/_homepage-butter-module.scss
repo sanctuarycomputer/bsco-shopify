@@ -1,0 +1,33 @@
+.homepage-butter-module {
+
+  .link-text-mobile {
+    display: block;
+  }
+
+  .left-section {
+    display: none;
+  }
+
+  .bg-image {
+    @include aspect-ratio(4, 2);
+  }
+
+  @media #{$medium-up} {
+
+    .columns-wrapper {
+      border-left: solid 8px color('blue');
+    }
+
+    .link-text-mobile {
+      display: none;
+    }
+
+    .left-section {
+      display: flex;
+    }
+
+    .bg-image {
+      float: left;
+    }
+  }
+}
