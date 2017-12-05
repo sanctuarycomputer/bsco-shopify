@@ -22,7 +22,7 @@
       &ndash; {{ 'general.meta.page' | t: page: current_page }}
     {% endif %}
     {% unless page_title contains shop.name %}
-      &ndash; {{ shop .name }}
+      &ndash; {{ shop.name }}
     {% endunless %}
   {% endcapture %}
   <title>{{ seo_title }}</title>
