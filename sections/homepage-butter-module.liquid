@@ -1,0 +1,65 @@
+<div class="homepage-butter-module col-12">
+  <div class="columns-wrapper border-top std-max-width mx-auto md-flex clearfix">
+    <div class="left-section border-right-dashed col md-col-5 flex flex-column items-center justify-around">
+      <img class="col-5" src="{{section.settings.icon | img_url}}" />
+      <div class="link-text center">
+        <a class="center inline-block" href="{{section.settings.butter_link}}" target="_blank">
+          <span class="link-text bebas black block">{{section.settings.link_text_one}}</span>
+          <span class="link-text bebas black block">{{section.settings.link_text_two}}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-image col-12 md-col-7">
+      <div class="content" style="background: url('{{section.settings.bg_image | img_url: '1900x'}}') no-repeat; background-size: cover;"></div>
+    </div>
+
+    <div class="link-text-mobile center py2">
+      <a class="center inline-block" href="{{section.settings.butter_link}}" target="_blank">
+        <span class="link-text bebas black block">{{section.settings.link_text_one}}</span>
+        <span class="link-text bebas black block">{{section.settings.link_text_two}}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Butter Module",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Icon"
+      },
+      {
+        "type": "text",
+        "id": "link_text_one",
+        "label": "Link Text One",
+        "placeholder": "Our Butter & Oil Recipes Are Easy"
+      },
+      {
+        "type": "text",
+        "id": "link_text_two",
+        "label": "Link Text Two",
+        "placeholder": "(And is Ipad Compatible)"
+      },
+      {
+        "type": "url",
+        "id": "butter_link",
+        "label": "Butter Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Bg Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage Butter Module",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}

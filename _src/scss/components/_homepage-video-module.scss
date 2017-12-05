@@ -1,7 +1,10 @@
 .homepage-video-module {
+  display: none;
 
-  .poster {
-    @include aspect-ratio(4, 3);
+  @media #{$medium-up} {
+    display: block;
+    .poster {
+      @include aspect-ratio(4, 3);
+    }
   }
-
 }
