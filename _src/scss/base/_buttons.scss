@@ -1,0 +1,31 @@
+button,
+.btn,
+input[type="submit"] {
+  @extend .bg-blue;
+  @extend .border-box;
+  @extend .inline-block;
+  @extend .pointer;
+  @extend .px3;
+  @extend .transition;
+  @extend .white;
+  height: 65px;
+  font-family: $bebas;
+  font-size: 24px;
+  line-height: 65px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @media #{$medium-up} {
+    height: 80px;
+    line-height: 80px;
+  }
+
+  &:hover {
+    @extend .bg-black;
+    text-decoration: none;
+  }
+
+  &[disabled] {
+    pointer-events: none;
+  }
+}
