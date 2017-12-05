@@ -1,0 +1,26 @@
+.homepage-hero {
+  height: 240px;
+
+  @media #{$medium-up} {
+    height: calc(90vh - #{$nav-desktop-height});
+  }
+
+  .homepage-hero-background {
+    height: 100%;
+  }
+
+  .homepage-hero-info {
+    bottom: 1em;
+    left: 1em;
+
+    @media #{$medium-up} {
+      bottom: 2em;
+      left: 2em;
+    }
+
+    @media #{$large-up} {
+      bottom: 4em;
+      left: 4em;
+    }
+  }
+}
