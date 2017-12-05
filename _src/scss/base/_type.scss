@@ -1,9 +1,12 @@
+$bebas: 'Bebas Neue', Helvetica Neue, Helvetica, Arial, sans-serif;
+$mono: 'GT America Mono', helvetica, sans-serif;
+
 .bebas {
-  font-family: "Bebas Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: $bebas;
 }
 
 .mono {
-  font-family: 'GT America Mono', helvetica, sans-serif;
+  font-family: $mono;
 }
 
 .title {
@@ -36,7 +39,7 @@ h3,
 h4,
 h5,
 h6 {
-  @extend .bebas;
+  font-family: $bebas;
 }
 
 a {
