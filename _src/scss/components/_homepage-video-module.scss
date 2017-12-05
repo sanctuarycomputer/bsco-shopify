@@ -1,0 +1,7 @@
+.homepage-video-module {
+
+  .poster {
+    @include aspect-ratio(4, 3);
+  }
+
+}

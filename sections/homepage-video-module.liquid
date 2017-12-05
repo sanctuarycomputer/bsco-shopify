@@ -1,0 +1,43 @@
+<div class="homepage-video-module relative">
+  <div class="absolute border-top col-10 std-max-width right-0"></div>
+  <div class="std-max-width mx-auto clearfix border-left border-top border-right">
+    <div class="poster col-6 col">
+      <div class="content" style="background: url('{{section.settings.video_poster | img_url: '1900x'}}') no-repeat center; background-size: cover;"></div>
+    </div>
+    <div class="col-6 col">
+      helloo
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Homepage Video Module",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "video_poster",
+        "label": "Video Poster"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "placeholder": "Watch Our Film"
+      },
+      {
+        "type": "text",
+        "id": "details",
+        "label": "Details",
+        "placeholder": "Learn very little about the Baking Supply Co in this short and confusing film"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage Video Module",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}
