@@ -41,6 +41,16 @@ $mono: 'GT America Mono', helvetica, sans-serif;
   }
 }
 
+.paragraph {
+  font-size: 12px;
+  line-height: 30px;
+
+  @media #{$medium-up} {
+    font-size: 30px;
+    line-height: 56px;
+  }
+}
+
 h1,
 h2,
 h3,
