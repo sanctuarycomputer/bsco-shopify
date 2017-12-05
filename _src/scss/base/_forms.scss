@@ -1,0 +1,32 @@
+.form,
+form {
+  @extend .block;
+  @extend .relative;
+}
+
+input[type="text"],
+textarea {
+  @extend .border-box;
+  border: color('blue') thin solid;
+  outline: 0;
+
+  &.error {
+    @extend .border-red;
+  }
+}
+
+input[type="text"] {
+  @extend .px3;
+  height: 65px;
+  font-size: 24px;
+  line-height: 65px;
+
+  @media #{$medium-up} {
+    height: 80px;
+    line-height: 80px;
+  }
+}
+
+textarea {
+  @extend .p2;
+}

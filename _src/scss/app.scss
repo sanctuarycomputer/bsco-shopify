@@ -9,26 +9,39 @@
   * Base design system
   *
   **/
+@import 'base/variables';
 @import 'base/colors';
 @import 'base/z-index';
 @import 'base/breakpoints';
 @import 'base/utils';
 @import 'base/type';
 @import 'base/border';
-@import 'base/variables';
+@import 'base/buttons';
+@import 'base/forms';
 @import 'base/aspects';
 
 
 /**
-  * Components and modules
+  * Global components
   *
   **/
 @import 'components/nav';
-@import 'components/press';
 @import 'components/footer';
+
+
+/**
+  * Route-specific components
+  *
+  **/
 @import 'components/homepage-hero';
+@import 'components/homepage-press';
 @import 'components/homepage-blog-callout';
 
+
+/**
+  * Site rules
+  *
+  **/
 * {
   font-family: "GT America Mono", monospace;
   text-rendering: optimizeLegibility;
@@ -36,6 +49,3 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.bebas {
-  font-family: "Bebas Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
-}
