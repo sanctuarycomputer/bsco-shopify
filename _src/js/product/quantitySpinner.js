@@ -3,15 +3,21 @@ class QuantitySpinner {
     this.elems = elems;
 
     this.elems.quantity = {
-      increments: document.querySelector('.quantity-increment'),
-      decrements: document.querySelector('.quantity-decrement'),
+      increments: document.querySelectorAll('.quantity-increment'),
+      decrements: document.querySelectorAll('.quantity-decrement'),
     };
 
-    this.elems.quantity.increments.addEventListener('click', (e) => {
-      this.update(e, 'increment');
+    console.log(this.elems.quantity.increments);
+
+    Array.from(this.elems.quantity.increments).forEach((increment) => {
+      increment.addEventListener('click', (e) => {
+        this.update(e, 'increment');
+      });
     });
-    this.elems.quantity.decrements.addEventListener('click', (e) => {
-      this.update(e, 'decrement');
+    Array.from(this.elems.quantity.decrements).forEach((decrement) => {
+      decrement.addEventListener('click', (e) => {
+        this.update(e, 'decrement');
+      });
     });
   }
 
