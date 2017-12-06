@@ -1,0 +1,35 @@
+{% capture newsletter_modal_contents %}
+  <div class='newsletter-modal-inner center border p3 max-width-2 mx-auto'>
+    <div class='image mb3'>
+      <div class='content'>
+        <img
+          class='fit'
+          src='{{ section.settings.image.src }}'
+          alt='{{ section.settings.image.alt }}'
+        />
+      </div>
+    </div>
+    {% include 'newsletter-form' %}
+  </div>
+{% endcapture %}
+{% include 'modal', contents: newsletter_modal_contents %}
+
+{% schema %}
+  {
+    "name": "Newsletter Modal",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Newsletter Modal",
+        "category": "Global"
+      }
+    ]
+  }
+{% endschema %}
+
