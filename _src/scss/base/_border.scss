@@ -1,36 +1,36 @@
 
 .border {
-  border: solid 8px color('blue');
+  border: solid $border-weight color('blue');
 }
 
 .border-left {
-  border-left: solid 8px color('blue');
+  border-left: solid $border-weight color('blue');
 }
 
 .border-left-dashed {
-  border-left: dashed 8px color('blue');
+  border-left: dashed $border-weight color('blue');
 }
 
 .border-top {
-  border-top: solid 8px color('blue');
+  border-top: solid $border-weight color('blue');
 }
 
 .border-top-dashed {
-  border-top: dashed 8px color('blue');
+  border-top: dashed $border-weight color('blue');
 }
 
 .border-right {
-  border-right: solid 8px color('blue');
+  border-right: solid $border-weight color('blue');
 }
 
 .border-right-dashed {
-  border-right: dashed 8px color('blue');
+  border-right: dashed $border-weight color('blue');
 }
 
 .border-bottom {
-  border-bottom: solid 8px color('blue');
+  border-bottom: solid $border-weight color('blue');
 }
 
 .border-bottom-dashed {
-  border-bottom: dashed 8px color('blue');
+  border-bottom: dashed $border-weight color('blue');
 }

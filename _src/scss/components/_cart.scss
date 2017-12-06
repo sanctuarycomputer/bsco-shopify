@@ -1,0 +1,10 @@
+.cart {
+  .checkout-button {
+    height: 80px;
+    width: 100%;
+
+    @media #{$medium-up} {
+      height: 270px;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+{% assign line_price = product.quantity | times: product.variant.price %}
+
 <div  class="line-item clearfix relative col col-12 border-bottom border-left border-right"
       data-product="{{ product.id }}"
       data-variant="{{ product.variant.id }}">
@@ -6,24 +8,24 @@
 
   <div class="line-item-image-wrapper col col-3">
     <img  class="line-item-image"
-          src="{{ product.image.src | img_url }}"
+          src="{{ product.image.src | img_url: '300x300', crop: 'center' }}"
           alt="{{ product.image.alt }}" />
   </div>
 
-  <div class="line-item-info-wrapper col col-9">
+  <div class="line-item-info-wrapper col col-9 p3 relative">
     <div class="product-title">
-      <span class="bebas large">{{ product.title }}</span>
+      <span class="bebas subtitle">{{ product.title }}</span>
     </div>
     <div class="product-description">
-      <span class="bebas mono">{{ product.product.description }}</span>
+      <span class="bebas mono copy">{{ product.product.description }}</span>
     </div>
 
-    <div class="clearfix">
-      <div class="col col-6">
-        {% include 'product-quantity-ui' %}
+    <div class="line-item-ui col col-12 clearfix p3">
+      <div class="line-item-quantity-wrapper col col-6 absolute">
+        {% include 'product-quantity-ui', quantity: product.quantity %}
       </div>
-      <div class="col col-6">
-        {% include 'product-price', current_variant: product.variant %}
+      <div class="line-item-price-wrapper col absolute right">
+        {% include 'product-price', current_variant: product.variant, classes: 'subtitle', price: line_price %}
       </div>
     </div>
   </div>

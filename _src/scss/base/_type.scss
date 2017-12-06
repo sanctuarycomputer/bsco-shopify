@@ -22,6 +22,18 @@ $mono: 'GT America Mono', monospace;
   letter-spacing: 2px;
 }
 
+.large {
+  font-size: 1.5em;
+}
+
+.large-2 {
+  font-size: 2em;
+}
+
+.large-3 {
+  font-size: 2.25em;
+}
+
 .title {
   font-size: 36px;
 
@@ -58,18 +70,6 @@ $mono: 'GT America Mono', monospace;
 
 .label {
   font-size: 14px;
-}
-
-.large {
-  font-size: 1.5em;
-}
-
-.large-2 {
-  font-size: 2em;
-}
-
-.large-3 {
-  font-size: 2.25em;
 }
 
 .link-text {

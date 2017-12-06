@@ -2,10 +2,21 @@
   <form action="/cart" method="post" novalidate>
     
     <div id="cart" class="cart relative clearfix">
-      <div class="cart-items col-12 mx-auto max-width-4">
+      <div class="cart-items col-12 clearfix mx-auto max-width-4">
         {% for item in cart.items %}
           {% include 'cart-line-item', product: item %}
         {% endfor %}
+      </div>
+
+      <div  class="checkout-button col col-12 border-top border-bottom center clearfix relative"
+            style="background: url({{ 'dripping-eye-tile-background.png' | asset_img_url: '1800x' }}) no-repeat center; background-size: cover;">
+
+        <a href="/checkout" title="Checkout"> 
+          <div class="col col-12 absolute-center">
+            <span class="uppercase blue title bebas">{{ 'cart.general.checkout' | t }} &mdash; </span>
+            <span class="cart-price uppercase blue title bebas">{{ cart.total_price | money }}</span>
+          </div>
+        </a>
       </div>
     </div>
 

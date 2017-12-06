@@ -1,0 +1,36 @@
+.line-item {
+  height: 90px;
+  overflow: hidden;
+
+  @media #{$medium-up} {
+    height: 300px;
+  }
+
+  .line-item-image-wrapper {
+    overflow: hidden;
+  }
+
+  .line-item-info-wrapper {
+    height: 100%;
+  }
+
+  .line-item-ui {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .line-item-price-wrapper {
+    bottom: 2em;
+    right: 2em;
+  }
+
+  .line-item-quantity-wrapper {
+    bottom: 2em;
+    left: 2em;
+  }
+}
+
+.cart-items + .checkout-button {
+  margin-top: -$border-weight;
+}
