@@ -1,6 +1,22 @@
 <div class="product-hero-details-card col col-3 absolute bg-white border">
   <div class="product-title px2 py1 border-bottom"><h1>{{ product.title }}</h1></div>
-  <div class="product-description p2"><p>{{ product.description }}</p></div>
+
+  <div class="product-details border-bottom clearfix">
+    <div class="product-detail col col-4 py2 center">
+      <span class="product-detail-metric bebas detail block">{{ product.metafields.product_detail.metric_1 }}</span>
+      <span class="product-detail-label helvetica label block">{{ product.metafields.product_detail.label_1 }}</span>
+    </div>
+    <div class="product-detail col col-4 py2 center">
+      <span class="product-detail-metric bebas detail block">{{ product.metafields.product_detail.metric_2 }}</span>
+      <span class="product-detail-label helvetica label block">{{ product.metafields.product_detail.label_2 }}</span>
+    </div>
+    <div class="product-detail col col-4 py2 center">
+      <span class="product-detail-metric bebas detail block">{{ product.metafields.product_detail.metric_3 }}</span>
+      <span class="product-detail-label helvetica label block">{{ product.metafields.product_detail.label_3 }}</span>
+    </div>
+  </div>
+
+  <div class="product-description p2 copy border-bottom">{{ product.description }}</div>
 
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
     <meta itemprop="priceCurrency" content="{{ shop.currency }}">
@@ -47,27 +63,37 @@
         {% endfor %}
       </select>
 
-      <label for="Quantity" class="hide">{{ 'products.product.quantity' | t }}</label>
-      <input type="number" id="Quantity" name="quantity" value="1" min="1">
-
-      <div data-price-wrapper>
-        <span data-product-price>
-          {{ current_variant.price | money }}
-        </span>
-
-        {% if product.compare_at_price_max > product.price %}
-          <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-          <s data-compare-price>
-            {% if current_variant.compare_at_price > current_variant.price %}
-              {{ current_variant.compare_at_price | money }}
-            {% endif %}
-          </s>
-        {% endif %}
+      <div class="quantity">
+        <div class="product-quantity">
+          <label for="Quantity" class="hide">{{ 'products.product.quantity' | t }}</label>
+          <input type="number" id="Quantity" name="quantity" value="1" min="1">
+        </div>
+        <div class="quantity-ui">
+        </div>
       </div>
 
+      <div class="">
+        <div data-price-wrapper>
+          <span data-product-price>
+            {{ current_variant.price | money }}
+          </span>
+
+          {% if product.compare_at_price_max > product.price %}
+            <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+            <s data-compare-price>
+              {% if current_variant.compare_at_price > current_variant.price %}
+                {{ current_variant.compare_at_price | money }}
+              {% endif %}
+            </s>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col col-12">
       <button
         type="submit"
         name="add"
+        class="full-width"
         data-add-to-cart
         {% unless current_variant.available %}disabled="disabled"{% endunless %}>
           <span data-add-to-cart-text>

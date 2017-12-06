@@ -4,4 +4,12 @@
   @media #{$medium-up} {
     width: 420px;
   }
+
+  .product-detail {
+    @extend .border-right-dashed;
+
+    &:last-of-type {
+      border: 0;
+    }
+  }
 }

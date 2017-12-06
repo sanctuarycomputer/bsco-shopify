@@ -20,6 +20,10 @@ input[type="submit"] {
     line-height: 80px;
   }
 
+  &.full-width {
+    width: 100%;
+  }
+
   &:hover {
     @extend .bg-black;
     text-decoration: none;
