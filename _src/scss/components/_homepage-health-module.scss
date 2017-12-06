@@ -1,0 +1,27 @@
+.homepage-health-module {
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    text-align: center;
+    padding: 0;
+  }
+
+  @media #{$medium-up} {
+    .left-section {
+      display: flex;
+    }
+
+    .right-section {
+      text-align: left;
+      padding-left: 2rem;
+
+      li {
+        &:before {
+          content: '-';
+        }
+      }
+    }
+  }
+}
