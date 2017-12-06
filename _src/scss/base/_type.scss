@@ -100,8 +100,17 @@ h6 {
 }
 
 a {
-  @extend .red;
+  color: color('red');
   text-decoration: none;
+
+  &.no-style {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
   &:hover {
     text-decoration: underline;

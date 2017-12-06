@@ -1,9 +1,9 @@
-{% for image in product.images %}
-  <div class="product-hero-slides col col-12">
+<div class="product-hero-slides col col-12">
+  {% for image in product.images %}
     {% if image.src contains '-hero' %}
       <div class="product-hero-slide relative">
         <img class="absolute" src="{{ image.src | img_url: '1800x' }}" alt="{{ img.alt | escape }}" />
       </div>
     {% endif %}
-  </div>
-{% endfor %}
+  {% endfor %}
+</div>

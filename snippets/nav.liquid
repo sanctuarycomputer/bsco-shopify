@@ -16,10 +16,14 @@
       {% endfor %}
     </div>
     <div class="col-2 flex items-center justify-center py2">
-      <div>
-        <div class="item-count bebas center">{{cart.item_count}}</div>
-        <div class="center">items</div>
-      </div>
+      <a  href="/cart"
+          title="Go to Cart"
+          class="no-style">
+        <div>
+          <div class="item-count bebas center">{{cart.item_count}}</div>
+          <div class="center">items</div>
+        </div>
+      </a>
     </div>
   </div>
 
