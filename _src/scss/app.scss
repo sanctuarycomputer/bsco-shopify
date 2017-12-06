@@ -26,6 +26,8 @@
   *
   **/
 @import 'components/nav';
+@import 'components/newsletter';
+@import 'components/newsletter-form';
 @import 'components/footer';
 
 
@@ -51,4 +53,5 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  border-radius: 0px;
 }

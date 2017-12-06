@@ -1,5 +1,7 @@
+$max-width: 1280;
+
 $nav-desktop-height: 176px;
 
 $transition-duration: 250ms;
-$transition-easing: cubic-bezier(0.455, 0.030, 0.515, 0.955); 
+$transition-easing: cubic-bezier(0.455, 0.030, 0.515, 0.955);
 $transition: $transition-duration $transition-easing;
