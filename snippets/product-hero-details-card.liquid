@@ -1,5 +1,7 @@
-<div class="product-hero-details-card col col-3 absolute bg-white border">
-  <div class="product-title px2 py1 border-bottom"><h1>{{ product.title }}</h1></div>
+<div class="product-hero-details-card col col-3 absolute bg-white border clearfix">
+  <div class="product-title p2 border-bottom">
+    <h1 class="mt1 mb0">{{ product.title }}</h1>
+  </div>
 
   <div class="product-details border-bottom clearfix">
     <div class="product-detail col col-4 py2 center">
@@ -63,47 +65,45 @@
         {% endfor %}
       </select>
 
-      <div class="quantity">
-        <div class="product-quantity">
-          <label for="Quantity" class="hide">{{ 'products.product.quantity' | t }}</label>
-          <input type="number" id="Quantity" name="quantity" value="1" min="1">
+      <div class="clearfix">
+        <div class="product-quantity col col-8 p2 border-right-dashed">
+          {% include 'product-quantity-ui' %}
         </div>
-        <div class="quantity-ui">
-        </div>
-      </div>
 
-      <div class="">
-        <div data-price-wrapper>
-          <span data-product-price>
-            {{ current_variant.price | money }}
-          </span>
+        <div class="product-price col col-4 right-align p2">
+          <div data-price-wrapper>
+            <span class="inline-block mt1 bebas large" data-product-price>
+              {{ current_variant.price | money }}
+            </span>
 
-          {% if product.compare_at_price_max > product.price %}
-            <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-            <s data-compare-price>
-              {% if current_variant.compare_at_price > current_variant.price %}
-                {{ current_variant.compare_at_price | money }}
-              {% endif %}
-            </s>
-          {% endif %}
+            {% if product.compare_at_price_max > product.price %}
+              <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+              <s data-compare-price>
+                {% if current_variant.compare_at_price > current_variant.price %}
+                  {{ current_variant.compare_at_price | money }}
+                {% endif %}
+              </s>
+            {% endif %}
+          </div>
         </div>
       </div>
 
       <div class="col col-12">
-      <button
-        type="submit"
-        name="add"
-        class="full-width"
-        data-add-to-cart
-        {% unless current_variant.available %}disabled="disabled"{% endunless %}>
-          <span data-add-to-cart-text>
-            {% if current_variant.available %}
-              {{ 'products.product.add_to_cart' | t }}
-            {% else %}
-              {{ 'products.product.sold_out' | t }}
-            {% endif %}
-          </span>
-      </button>
+        <button
+          type="submit"
+          name="add"
+          class="full-width"
+          data-add-to-cart
+          {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+            <span data-add-to-cart-text>
+              {% if current_variant.available %}
+                {{ 'products.product.add_to_cart' | t }}
+              {% else %}
+                {{ 'products.product.sold_out' | t }}
+              {% endif %}
+            </span>
+        </button>
+      </div>
     </form>
 
   </div>
