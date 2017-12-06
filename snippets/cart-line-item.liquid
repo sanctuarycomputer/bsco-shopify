@@ -1,0 +1,30 @@
+<div  class="line-item clearfix relative col col-12 border-bottom border-left border-right"
+      data-product="{{ product.id }}"
+      data-variant="{{ product.variant.id }}">
+
+      <script>console.log({{ product | json }});</script>
+
+  <div class="line-item-image-wrapper col col-3">
+    <img  class="line-item-image"
+          src="{{ product.image.src | img_url }}"
+          alt="{{ product.image.alt }}" />
+  </div>
+
+  <div class="line-item-info-wrapper col col-9">
+    <div class="product-title">
+      <span class="bebas large">{{ product.title }}</span>
+    </div>
+    <div class="product-description">
+      <span class="bebas mono">{{ product.product.description }}</span>
+    </div>
+
+    <div class="clearfix">
+      <div class="col col-6">
+        {% include 'product-quantity-ui' %}
+      </div>
+      <div class="col col-6">
+        {% include 'product-price', current_variant: product.variant %}
+      </div>
+    </div>
+  </div>
+</div>
