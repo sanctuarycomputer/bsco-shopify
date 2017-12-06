@@ -1,4 +1,5 @@
 import ImagePreloader from './ImagePreloader';
+import MobileNav from './MobileNav';
 /**
   * Baking Supply Co. App Constructor
   *
@@ -6,6 +7,7 @@ import ImagePreloader from './ImagePreloader';
 class App {
   constructor() {
     new ImagePreloader();
+    new MobileNav();
   }
 }
 

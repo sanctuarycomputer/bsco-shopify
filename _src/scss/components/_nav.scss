@@ -1,7 +1,7 @@
 .nav {
   @extend .border-bottom;
 
-  .nav-toggle {
+  .mobile-nav-toggle {
     display: flex;
   }
 
@@ -16,13 +16,35 @@
     font-size: 60px;
   }
 
+  .mobile-menu {
+    pointer-events: none;
+    opacity: 0;
+    transition: $transition;
+    position: fixed;
+    height: calc(100% - #{$nav-mobile-height});
+    background: color('pink');
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+
+    &.active {
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+
   @media #{$large-up} {
-    .nav-toggle {
+    .mobile-nav-toggle {
       display: none;
     }
 
     .link-list {
       display: flex;
+    }
+
+    .mobile-menu {
+      display: none;
     }
   }
 }
