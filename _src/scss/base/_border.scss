@@ -1,36 +1,26 @@
+$sides: top right left bottom;
 
 .border {
   border: solid 8px color('blue');
 }
 
-.border-left {
-  border-left: solid 8px color('blue');
-}
+@each $value in $sides  {
+  .border-#{$value} {
+    border-#{$value}: solid color('blue');
+    border-width: 4px;
 
-.border-left-dashed {
-  border-left: dashed 8px color('blue');
-}
+    @media #{$medium-up} {
+      border-#{$value}: solid color('blue');
+      border-width: 8px;
+    }
+  }
 
-.border-top {
-  border-top: solid 8px color('blue');
-}
+  .border-#{$value}-dashed {
+    border-#{$value}: dashed color('blue');
+    border-width: 4px;
 
-.border-top-dashed {
-  border-top: dashed 8px color('blue');
-}
-
-.border-right {
-  border-right: solid 8px color('blue');
-}
-
-.border-right-dashed {
-  border-right: dashed 8px color('blue');
-}
-
-.border-bottom {
-  border-bottom: solid 8px color('blue');
-}
-
-.border-bottom-dashed {
-  border-bottom: dashed 8px color('blue');
+    @media #{$medium-up} {
+      border-width: 8px;
+    }
+  }
 }

@@ -1,0 +1,7 @@
+{% for image in product.images %}
+  {% if image.src contains '-grid' %}
+    <div class="product-grid-image one-one height-100">
+      <div class="content" style="background: url('{{image | img_url: '1900x'}}') no-repeat center; background-size: cover;"></div>
+    </div>
+  {% endif %}
+{% endfor %}
