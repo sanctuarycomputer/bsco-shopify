@@ -1,7 +1,8 @@
 import ImagePreloader from './ImagePreloader';
 import MobileNav from './MobileNav';
 
-import Product from './product';
+import Product from './Product';
+import Cart from './Cart';
 
 /**
   * Baking Supply Co. App Constructor
@@ -16,8 +17,13 @@ class App {
     new ImagePreloader();
     new MobileNav();
 
-    this.Product = (document.getElementById('product')) ? new Product(this.elems) : false;
-    
+    /**
+      * Route-specific scripts
+      *
+      **/
+    this.Product  = (document.getElementById('product')) ? new Product(this.elems) : false;
+    this.Cart     = (document.getElementById('cart')) ? new Cart(this.elems) : false;
+
   }
 }
 
