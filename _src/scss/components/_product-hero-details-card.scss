@@ -1,0 +1,7 @@
+.product-hero-details-card {
+  width: 100%;
+
+  @media #{$medium-up} {
+    width: 420px;
+  }
+}
