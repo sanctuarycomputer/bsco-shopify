@@ -1,4 +1,4 @@
-import QuantitySpinner from './quantitySpinner';
+import QuantitySpinner from './QuantitySpinner';
 
 class Product {
   constructor(elems) {

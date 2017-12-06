@@ -35,11 +35,8 @@ class QuantitySpinner {
   decrement(value) {
     const quantity = parseInt(value);
 
-    if (quantity <= 1) {
-      return quantity;
-    } else {
-      return quantity - 1;
-    }
+    if (quantity <= 1) return quantity;
+    return quantity - 1;
   }
 }
 

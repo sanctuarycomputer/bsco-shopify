@@ -16,7 +16,7 @@ class App {
     new ImagePreloader();
     new MobileNav();
 
-    this.Product = (document.getElementById('product')) ? new Product(this.elems) : false;
+    this.product = (document.getElementById('product')) ? new Product(this.elems) : false;
     
   }
 }
