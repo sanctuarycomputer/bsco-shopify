@@ -1,0 +1,19 @@
+form.newsletter-form {
+  input {
+    text-align: center;
+    border-color: color('blue');
+    border-style: solid;
+    border-width: 3px;
+    padding: 20px 10px;
+  }
+  button {
+    border: none;
+    height: 65px;
+    line-height: 65px;
+    font-size: 2rem;
+    letter-spacing: 0.85px;
+  }
+  input, button {
+    width: 100%;
+  }
+}

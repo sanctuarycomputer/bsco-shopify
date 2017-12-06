@@ -68,6 +68,9 @@
     {{ content_for_layout }}
   </main>
 
+  {% if template != 'cart' %}
+    {% section 'newsletter' %}
+  {% endif %}
   {% section 'footer' %}
 
 </body>
