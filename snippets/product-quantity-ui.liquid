@@ -1,12 +1,16 @@
 <div class="product-quantity-ui quantity mt1">
   <div class="shopify-quantity hide">
     <label for="quantity">{{ 'products.product.quantity' | t }}</label>
-    <input class="quantity" data-product="{{ product.id }}" type="number" name="quantity" value="1" min="1">
+    <input id="quantity-{{ product.id }}" class="quantity" data-product="{{ product.id }}" type="number" name="quantity" value="1" min="1">
   </div>
   <div class="quantity-ui relative">
     <div class="quantity-decrement col col-4" data-product="{{ product.id }}">DOWN</div>
     <div class="quantity-input col col-4">
-      <span class="bebas large"><span class="quantity-target bebas" data-product="{{ product.id }}">1</span>X</span>
+      <span class="bebas large">
+        <span id="quantity-target-{{ product.id }}"
+              class="quantity-target bebas"
+              data-product="{{ product.id }}">1</span>X
+      </span>
     </div>
     <div class="quantity-increment col col-4" data-product="{{ product.id }}">UP</div>
   </div>

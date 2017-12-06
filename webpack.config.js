@@ -11,6 +11,7 @@ module.exports = {
   output: {
     filename: 'assets/bsco.js'
   },
+  devtool: 'eval-source-map',
   module: {
     loaders: [
       {
