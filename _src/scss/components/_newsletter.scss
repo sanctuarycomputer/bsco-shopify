@@ -1,0 +1,7 @@
+.newsletter {
+  @media #{$large-up} {
+    .form-wrapper {
+      float: right;
+    }
+  }
+}

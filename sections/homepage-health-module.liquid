@@ -1,0 +1,59 @@
+<div class="homepage-health-module relative">
+  <div class="absolute border-top col-10 std-max-width"></div>
+  <div class="std-max-width col-12 flex mx-auto clearfix border-top">
+    <div class="left-section col-4 col flex items-center justify-end pr4 border-right">
+      <img class="col-6" src="{{section.settings.icon | img_url}}" />
+    </div>
+    <div class="right-section col-12 md-col-8 col">
+      <h2 class="subtitle bebas">{{section.settings.title}}</h2>
+      <ul class="p0">
+        <li class="paragraph mono">{{section.settings.list_item_1}}</li>
+        <li class="paragraph mono">{{section.settings.list_item_2}}</li>
+        <li class="paragraph mono">{{section.settings.list_item_3}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Health Module",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Icon"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "placeholder": "It's Healthy On A Real Level"
+      },
+      {
+        "type": "text",
+        "id": "list_item_1",
+        "label": "List Item 1",
+        "placeholder": "Low to no refined sugar ever"
+      },
+      {
+        "type": "text",
+        "id": "list_item_2",
+        "label": "List Item 2",
+        "placeholder": "Gluten free (no gluten)"
+      },
+      {
+        "type": "text",
+        "id": "list_item_3",
+        "label": "List Item",
+        "placeholder": "It's Healthy On A Real Level"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage Health Module",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}

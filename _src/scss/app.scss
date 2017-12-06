@@ -26,6 +26,8 @@
   *
   **/
 @import 'components/nav';
+@import 'components/newsletter';
+@import 'components/newsletter-form';
 @import 'components/footer';
 
 
@@ -38,6 +40,7 @@
 @import 'components/homepage-blog-callout';
 @import 'components/homepage-butter-module';
 @import 'components/homepage-video-module';
+@import 'components/homepage-health-module';
 @import 'components/product-hero-slides';
 
 
@@ -51,4 +54,5 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  border-radius: 0px;
 }
