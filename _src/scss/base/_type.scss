@@ -1,12 +1,25 @@
-$bebas: 'Bebas Neue', Helvetica Neue, Helvetica, Arial, sans-serif;
-$mono: 'GT America Mono', helvetica, sans-serif;
+$bebas: 'Bebas Neue', Helvetica Neue, helvetica, sans-serif;
+$helvetica: Helvetica Neue, helvetica, sans-serif;
+$mono: 'GT America Mono', monospace;
 
 .bebas {
   font-family: $bebas;
 }
 
+.helvetica {
+  font-family: $helvetica;
+}
+
 .mono {
   font-family: $mono;
+}
+
+.spacing-1 {
+  letter-spacing: 1px;
+}
+
+.spacing-2 {
+  letter-spacing: 2px;
 }
 
 .title {
@@ -23,6 +36,28 @@ $mono: 'GT America Mono', helvetica, sans-serif;
   @media #{$medium-up} {
     font-size: 52px;
   }
+}
+
+.copy {
+  font-size: 16px;
+  line-height: 37px;
+
+  @media #{$medium-up} {
+    font-size: 20px;
+    line-height: 43px;
+  }
+}
+
+.detail {
+  font-size: 18px;
+
+  @media #{$medium-up} {
+    font-size: 20px;
+  }
+}
+
+.label {
+  font-size: 14px;
 }
 
 .large {
@@ -71,6 +106,10 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+p {
+  margin: 0;
 }
 
 ul {

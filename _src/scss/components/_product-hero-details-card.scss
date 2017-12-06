@@ -1,0 +1,37 @@
+.product-hero-details-card {
+  width: 100%;
+
+  @media #{$medium-up} {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    width: 420px;
+  }
+
+  .product-detail {
+    @extend .border-right-dashed;
+
+    &:last-of-type {
+      border: 0;
+    }
+  }
+
+  .product-description {
+    .p1,
+    .p2,
+    .p3,
+    .p4 {
+      padding: 0;
+    }
+  }
+
+  .product-quantity,
+  .product-price {
+    height: $button-height-mobile;
+
+    @media #{$medium-up} {
+      height: $button-height-desktop;
+    }
+  }
+}
