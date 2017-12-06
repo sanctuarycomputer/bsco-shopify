@@ -18,6 +18,14 @@
   }
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
+.height-100 {
+  height: 100%;
+}
+
 @for $i from 1 through 12 {
   .lg-faux-col-#{$i} {
     @media #{$large-up} {
