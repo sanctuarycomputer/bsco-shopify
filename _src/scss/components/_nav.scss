@@ -1,7 +1,12 @@
 .nav {
   @extend .border-bottom;
 
+  .nav-toggle {
+    display: flex;
+  }
+
   .link-list {
+    display: none;
     @extend .border-left;
     @extend .border-right-dashed;
   }
@@ -9,5 +14,15 @@
   .item-count {
     @extend .bebas;
     font-size: 60px;
+  }
+
+  @media #{$large-up} {
+    .nav-toggle {
+      display: none;
+    }
+
+    .link-list {
+      display: flex;
+    }
   }
 }

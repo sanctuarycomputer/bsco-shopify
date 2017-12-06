@@ -1,12 +1,15 @@
 <nav class="nav">
   <div class="col-12 flex std-max-width mx-auto">
-    <div class="col-2 flex justify-center items-center py2">
+    <div class="nav-toggle col-2 flex justify-center items-center py2">
+      {% include 'icon-leaf' %}
+    </div>
+    <div class="col-8 lg-col-2 flex justify-center items-center py2">
       {% include 'logo-cloud' %}
     </div>
     <div class="link-list col-8 flex items-center justify-between py2 px3">
       {% for link in linklists.main-menu.links %}
         <a href="{{ link.url }}">
-          <h3 class="bebas black">{{ link.title }}</h3>
+          <h3 class="large-2 bebas black">{{ link.title }}</h3>
         </a>
       {% endfor %}
     </div>
@@ -18,3 +21,7 @@
     </div>
   </div>
 </nav>
+
+<div>
+  mobile Menu
+</div>
