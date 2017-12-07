@@ -3,12 +3,12 @@
     <div class="mobile-nav-toggle col-2 flex justify-center items-center py2">
       {% include 'icon-leaf' %}
     </div>
-    <div class="col-8 lg-col-2 flex justify-center items-center py2">
+    <div class="col-8 lg-col-2 flex justify-center items-center py2 pr3">
       <a class="inline-block" href="/">
         {% include 'logo-cloud' %}
       </a>
     </div>
-    <div class="link-list col-8 flex items-center justify-between py2 px3">
+    <div class="link-list col-8 flex items-center justify-evenly">
       {% for link in linklists.main-menu.links %}
         <a href="{{ link.url }}">
           <h3 class="large-2 bebas black">{{ link.title }}</h3>
@@ -21,7 +21,7 @@
           class="no-style">
         <div>
           <div class="item-count bebas center">{{cart.item_count}}</div>
-          <div class="center">items</div>
+          <div class="item-text center helvetica">items</div>
         </div>
       </a>
     </div>

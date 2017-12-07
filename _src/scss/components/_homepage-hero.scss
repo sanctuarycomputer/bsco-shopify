@@ -3,6 +3,7 @@
 
   @media #{$medium-up} {
     height: calc(90vh - #{$nav-desktop-height});
+    min-height: 540px;
   }
 
   .homepage-hero-background {
