@@ -1,0 +1,9 @@
+.contact {
+  .contact-info {
+    padding: .5em;
+
+    @media #{$medium-up} {
+      padding: 2em;
+    }
+  }
+}
