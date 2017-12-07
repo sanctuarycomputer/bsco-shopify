@@ -1,4 +1,5 @@
 import ImagePreloader from './ImagePreloader';
+import ModalController from './ModalController';
 import MobileNav from './MobileNav';
 
 import Product from './Product';
@@ -15,14 +16,15 @@ class App {
     };
 
     new ImagePreloader();
+    new ModalController();
     new MobileNav();
 
     /**
       * Route-specific scripts
       *
       **/
-    this.Product  = (document.getElementById('product')) ? new Product(this.elems) : false;
-    this.Cart     = (document.getElementById('cart')) ? new Cart(this.elems) : false;
+    this.product  = (document.getElementById('product')) ? new Product(this.elems) : false;
+    this.cart     = (document.getElementById('cart')) ? new Cart(this.elems) : false;
 
   }
 }

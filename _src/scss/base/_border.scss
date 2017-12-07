@@ -1,36 +1,30 @@
+$sides: top right left bottom;
 
 .border {
-  border: solid $border-weight color('blue');
+  border: solid $border-weight-mobile color('blue');
+
+  @media #{$medium-up} {
+    border: solid $border-weight-desktop color('blue');
+  }
 }
 
-.border-left {
-  border-left: solid $border-weight color('blue');
-}
+@each $value in $sides  {
+  .border-#{$value} {
+    border-#{$value}: solid color('blue');
+    border-width: $border-weight-mobile;
 
-.border-left-dashed {
-  border-left: dashed $border-weight color('blue');
-}
+    @media #{$medium-up} {
+      border-#{$value}: solid color('blue');
+      border-width: $border-weight-desktop;
+    }
+  }
 
-.border-top {
-  border-top: solid $border-weight color('blue');
-}
+  .border-#{$value}-dashed {
+    border-#{$value}: dashed color('blue');
+    border-width: $border-weight-mobile;
 
-.border-top-dashed {
-  border-top: dashed $border-weight color('blue');
-}
-
-.border-right {
-  border-right: solid $border-weight color('blue');
-}
-
-.border-right-dashed {
-  border-right: dashed $border-weight color('blue');
-}
-
-.border-bottom {
-  border-bottom: solid $border-weight color('blue');
-}
-
-.border-bottom-dashed {
-  border-bottom: dashed $border-weight color('blue');
+    @media #{$medium-up} {
+      border-width: $border-weight-desktop;
+    }
+  }
 }

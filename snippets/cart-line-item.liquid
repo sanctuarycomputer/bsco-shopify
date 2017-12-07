@@ -12,15 +12,15 @@
           alt="{{ product.image.alt }}" />
   </div>
 
-  <div class="line-item-info-wrapper col col-9 p3 relative">
+  <div class="line-item-info-wrapper col col-9 relative">
     <div class="product-title">
       <span class="bebas subtitle">{{ product.title }}</span>
     </div>
-    <div class="product-description">
+    <div class="product-description sm-hide xs-hide">
       <span class="bebas mono copy">{{ product.product.description }}</span>
     </div>
 
-    <div class="line-item-ui col col-12 clearfix p3">
+    <div class="line-item-ui col col-12 clearfix">
       <div class="line-item-quantity-wrapper col col-6 absolute">
         {% include 'product-quantity-ui', quantity: product.quantity %}
       </div>
