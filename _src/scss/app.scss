@@ -36,6 +36,8 @@
   * Route-specific components
   *
   **/
+@import 'components/cart';
+@import 'components/cart-line-item';
 @import 'components/homepage-hero';
 @import 'components/homepage-press';
 @import 'components/homepage-blog-callout';

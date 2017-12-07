@@ -1,0 +1,18 @@
+{% unless price %}
+  {% assign price = current_variant.price %}
+{% endunless %}
+
+<div data-price-wrapper>
+  <span class="inline-block mt1 bebas large {{ classes }}" data-product-price>
+    {{ price | money }}
+  </span>
+
+  {% if product.compare_at_price_max > product.price %}
+    <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+    <s data-compare-price>
+      {% if current_variant.compare_at_price > price %}
+        {{ current_variant.compare_at_price | money }}
+      {% endif %}
+    </s>
+  {% endif %}
+</div>

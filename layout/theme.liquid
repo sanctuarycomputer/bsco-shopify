@@ -60,7 +60,11 @@
   {{ content_for_header }}
 </head>
 
-<body id="app" class="{{ page_title | handle }} template-{{ template.name | handle }}">
+{% if template == 'cart' %}
+  {% assign site_background = 'bg-pink' %}
+{% endif %}
+
+<body id="app" class="{{ page_title | handle }} template-{{ template.name | handle }} {{ site_background }}">
 
   {% section 'newsletter-modal' %}
 
