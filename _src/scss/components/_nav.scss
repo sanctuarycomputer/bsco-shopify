@@ -7,8 +7,6 @@
 
   .link-list {
     display: none;
-    @extend .border-left;
-    @extend .border-right-dashed;
   }
 
   .item-count {
@@ -44,11 +42,23 @@
     }
 
     .link-list {
-      display: flex;
+      display: block;
     }
 
     .mobile-menu {
       display: none;
+    }
+  }
+}
+
+.site-blue {
+  .nav {
+    .nav-el, .item-count, .item-text {
+      color: color('white');
+    }
+    .logo-container {
+      .background { fill: color('white'); }
+      .text { fill: color('blue'); }
     }
   }
 }
