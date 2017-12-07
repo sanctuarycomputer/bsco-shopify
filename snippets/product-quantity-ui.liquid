@@ -2,20 +2,22 @@
   {% assign quantity = 1 %}
 {% endunless %}
 
-<div class="product-quantity-ui quantity clearfix mt1">
+<div class="product-quantity-ui quantity clearfix height-100">
   <div class="shopify-quantity hide">
     <label for="quantity">{{ 'products.product.quantity' | t }}</label>
     <input id="quantity-{{ product.id }}" class="quantity" data-product="{{ product.id }}" type="number" name="quantity" value="{{ quantity }}" min="1">
   </div>
-  <div class="quantity-ui relative">
-    <div class="quantity-decrement col col-4" data-product="{{ product.id }}">DOWN</div>
-    <div class="quantity-input col col-4">
-      <span class="bebas large">
-        <span id="quantity-target-{{ product.id }}"
-              class="quantity-target bebas"
-              data-product="{{ product.id }}">{{ quantity }}</span>X
-      </span>
+  <div class="quantity-ui relative height-100">
+    <button class="quantity-decrement quantity-button col col-4 bg-pink height-100 center relative" data-product="{{ product.id }}">
+      <img class="col-5 absolute-center" src="{{ 'icon-minus.svg' | asset_url }}" alt="decrease quantity button" />
+    </button>
+    <div class="quantity-input col col-4 center">
+      <span id="quantity-target-{{ product.id }}"
+            class="quantity-target inline-block mt2 mono bold large-3"
+            data-product="{{ product.id }}">{{ quantity }}</span>
     </div>
-    <div class="quantity-increment col col-4" data-product="{{ product.id }}">UP</div>
+    <button class="quantity-increment quantity-button col col-4 bg-pink height-100 center relative" data-product="{{ product.id }}">
+      <img class="col-5 absolute-center" src="{{ 'icon-plus.svg' | asset_url }}" alt="increase quantity button" />
+    </button>
   </div>
 </div>

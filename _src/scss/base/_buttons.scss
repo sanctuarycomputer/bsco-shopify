@@ -29,9 +29,21 @@ input[type="submit"] {
   &:hover {
     @extend .bg-black;
     text-decoration: none;
+
+    &.quantity-button {
+      @extend .bg-white;
+
+      &:active {
+        @extend .bg-red;
+      }
+    }
   }
 
   &[disabled] {
     pointer-events: none;
+  }
+
+  &:focus {
+    outline: 0;
   }
 }
