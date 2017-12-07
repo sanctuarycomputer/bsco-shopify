@@ -6,6 +6,17 @@
     height: 80px;
     width: 100%;
 
+    .gradient-blue {
+      opacity: 0;
+      transition: $transition;
+    }
+
+    &:hover {
+      .gradient-blue {
+        opacity: 1;
+      }
+    }
+
     @media #{$medium-up} {
       background-size: 100px;
       height: 270px;
