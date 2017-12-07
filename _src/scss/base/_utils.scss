@@ -37,6 +37,10 @@
   height: 100%;
 }
 
+.full-width {
+  width: 100%;
+}
+
 @for $i from 1 through 12 {
   .lg-faux-col-#{$i} {
     @media #{$large-up} {
