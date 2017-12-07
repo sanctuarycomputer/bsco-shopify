@@ -1,12 +1,14 @@
-<div id="press" class="col-12">
-  <div class="std-max-width mx-auto center">
-    <h3 class="bebas">{{section.settings.title}}</h3>
-    <div class="logo-row flex justify-between items-center py4">
-      {% for block in section.blocks %}
-        <span>
-          <img src="{{block.settings.logo | img_url}}"/>
-        </span>
-      {% endfor %}
+<div id='press' class='border-top mb1 clearfix'>
+  <div class="col-12">
+    <div class="std-max-width mx-auto center">
+      <h3 class="bebas">{{section.settings.title}}</h3>
+      <div class="logo-row flex justify-between items-center py3 px4">
+        {% for block in section.blocks %}
+          <span>
+            <img src="{{block.settings.logo | img_url}}"/>
+          </span>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>
