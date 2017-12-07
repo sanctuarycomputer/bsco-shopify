@@ -4,8 +4,6 @@
       data-product="{{ product.id }}"
       data-variant="{{ product.variant.id }}">
 
-      <script>console.log({{ product | json }});</script>
-
   <div class="line-item-image-wrapper col col-3">
     <img  class="line-item-image"
           src="{{ product.image.src | img_url: '300x300', crop: 'center' }}"

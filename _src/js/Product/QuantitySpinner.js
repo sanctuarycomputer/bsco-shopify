@@ -7,8 +7,6 @@ class QuantitySpinner {
       decrements: document.querySelectorAll('.quantity-decrement'),
     };
 
-    console.log(this.elems.quantity.increments);
-
     Array.from(this.elems.quantity.increments).forEach((increment) => {
       increment.addEventListener('click', (e) => {
         this.update(e, 'increment');

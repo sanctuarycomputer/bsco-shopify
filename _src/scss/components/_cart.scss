@@ -1,9 +1,13 @@
 .cart {
   .checkout-button {
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 50px;
     height: 80px;
     width: 100%;
 
     @media #{$medium-up} {
+      background-size: 100px;
       height: 270px;
     }
   }
