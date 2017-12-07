@@ -94,10 +94,11 @@ $mono: 'GT America Mono', monospace;
 .paragraph {
   font-size: 12px;
   line-height: 30px;
+  letter-spacing: 0.8px;
 
   @media #{$medium-up} {
-    font-size: 30px;
-    line-height: 56px;
+    font-size: 1.5em;
+    line-height: 2
   }
 }
 
@@ -143,7 +144,8 @@ p {
 }
 
 ul {
-  list-style-type: none;
+  list-style-type: katakana;
+  padding-left: 54px;
 }
 
 .underline-text {
