@@ -7,6 +7,8 @@
           {% include 'cart-line-item', product: item %}
         {% endfor %}
       </div>
+      
+      {% section 'cart-upsell' %}
 
       <div  class="checkout-button col col-12 border-top center clearfix relative"
             style="background: url({{ 'dripping-eye-tile-background.png' | asset_img_url: '1800x' }}) no-repeat center; background-size: cover;">
@@ -19,7 +21,9 @@
         </a>
       </div>
     </div>
+
   </form>
+
 {% else %}
   <h1>{{ 'cart.general.title' | t }}</h1>
 

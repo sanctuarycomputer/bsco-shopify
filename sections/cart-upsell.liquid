@@ -1,0 +1,53 @@
+{% if section.settings.upsell %}
+  {% assign product = all_products[section.settings.upsell] %}
+
+  {% comment %}
+    Ensures we don't redundantly offer upsell item.
+  {% endcomment %}
+  {% for item in cart.items %}
+    {% if item.variant_id == product.selected_or_first_available_variant.id %}
+      {% assign has_upsell = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% unless has_upsell %}
+    <a  class="no-style"
+        href="/cart/add/{{ product.selected_or_first_available_variant.id }}">
+      <div id="cart-upsell" class="cart-upsell clearfix center"> 
+        <div class="cart-upsell-wrapper transition pointer sm-col-12 md-col-8 lg-col-6 border-left-dashed border-right-dashed p3 inline-block clearfix">
+          <div class="col-12 center mb2">
+            <div class="upsell-image-wrapper inline-block">
+              <img class="upsell-image height-100" src="{{ product.featured_image.src | img_url: '200x' }}" alt="{{ product.featured_image.alt }}" />
+            </div>
+          </div>
+          <div class="col-12 center mb2">
+            <span class="max-width-2 block mx-auto copy">Add {{ product.title }} to your box for {{ product.price | money_without_trailing_zeros }}?
+          </div>
+          <div class="col col-12 relative center">
+              <span class="bebas title red">Yes Pls</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  {% endunless %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Cart Upsell Module",
+    "settings": [
+      {
+        "type": "product",
+        "id": "upsell",
+        "label": "Upsell Product"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cart Upsell Module",
+        "category": "Cart"
+      }
+    ]
+  }
+{% endschema %}
