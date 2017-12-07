@@ -4,16 +4,18 @@
       {% include 'icon-leaf' %}
     </div>
     <div class="col-8 lg-col-2 flex justify-center items-center py2 pr3">
-      <a class="inline-block" href="/">
+      <a class="logo-container inline-block" href="/">
         {% include 'logo-cloud' %}
       </a>
     </div>
-    <div class="link-list col-8 flex items-center justify-evenly">
-      {% for link in linklists.main-menu.links %}
-        <a href="{{ link.url }}">
-          <h3 class="large-2 bebas black">{{ link.title }}</h3>
-        </a>
-      {% endfor %}
+    <div class="link-list col-8 border-left">
+      <div class="border-right-dashed col-12 lg-flex items-center height-100 justify-between py2 px3">
+        {% for link in linklists.main-menu.links %}
+          <a href="{{ link.url }}">
+            <h3 class="nav-el large-2 bebas black">{{ link.title }}</h3>
+          </a>
+        {% endfor %}
+      </div>
     </div>
     <div class="col-2 flex items-center justify-center py2">
       <a  href="/cart"
