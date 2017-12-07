@@ -6,8 +6,6 @@
   }
 
   .content-wrapper {
-    border-left: solid $border-weight-mobile color('blue');
-    border-right: solid $border-weight-mobile color('blue');
 
     @media #{$medium-up} {
       border-bottom: solid $border-weight-desktop color('blue');
@@ -29,7 +27,8 @@
           border-right: dashed calc(#{$border-weight-desktop} / 2) color('blue');
         }
       }
-      &:last-of-type {
+
+      &:nth-of-type(2) {
         border-top: dashed calc(#{$border-weight-mobile} / 2) color('blue');
 
         @media #{$medium-up} {
