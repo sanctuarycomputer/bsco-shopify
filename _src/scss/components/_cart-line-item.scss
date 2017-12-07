@@ -7,16 +7,10 @@
   }
 
   .line-item-image-wrapper {
-    height: 100%;
     overflow: hidden;
-
-    .line-item-image {
-      height: 100%;
-    }
   }
 
   .line-item-info-wrapper {
-    height: 100%;
     padding: .5em;
 
     @media #{$medium-up} {

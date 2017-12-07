@@ -4,13 +4,13 @@
       data-product="{{ product.id }}"
       data-variant="{{ product.variant.id }}">
 
-  <div class="line-item-image-wrapper col col-3">
-    <img  class="line-item-image"
+  <div class="line-item-image-wrapper height-100 col col-3">
+    <img  class="line-item-image height-100"
           src="{{ product.image.src | img_url: '300x300', crop: 'center' }}"
           alt="{{ product.image.alt }}" />
   </div>
 
-  <div class="line-item-info-wrapper col col-9 relative">
+  <div class="line-item-info-wrapper height-100 col col-9 relative">
     <div class="product-title">
       <span class="bebas subtitle">{{ product.title }}</span>
     </div>
