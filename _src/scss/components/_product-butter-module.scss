@@ -1,4 +1,6 @@
 .product-butter-module {
+  border-top-width: 0;
+
   .content-wrapper {
     display: block;
   }
@@ -18,6 +20,8 @@
     }
   }
   @media #{$medium-up} {
+    border-top-width: $border-weight-desktop;
+
     .content-wrapper {
       display: flex;
     }

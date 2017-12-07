@@ -1,12 +1,22 @@
 .product-hero-details-card {
+  border-bottom-width: 0;
   width: 100%;
 
   @media #{$medium-up} {
+    border-bottom-width: $border-weight-desktop;
     position: absolute;
     right: 0;
     top: 50%;
     transform: translate3d(0, -50%, 0);
     width: 420px;
+  }
+
+  .product-title {
+    text-align: center;
+
+    @media #{$medium-up} {
+      text-align: left;
+    }
   }
 
   .product-detail {
