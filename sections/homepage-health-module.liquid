@@ -2,11 +2,11 @@
   <div class="absolute border-top col-10 std-max-width"></div>
   <div class="std-max-width col-12 flex mx-auto clearfix border-top">
     <div class="left-section col-4 col flex items-center justify-end pr4 border-right">
-      <img class="col-6" src="{{section.settings.icon | img_url}}" />
+      {% include 'leaf' %}
     </div>
-    <div class="right-section col-12 md-col-8 col">
-      <h2 class="subtitle bebas">{{section.settings.title}}</h2>
-      <ul class="p0">
+    <div class="right-section col-12 md-col-8 col py4">
+      <h2 class="subtitle bebas m0 mb1">{{section.settings.title}}</h2>
+      <ul class="m0">
         <li class="paragraph mono">{{section.settings.list_item_1}}</li>
         <li class="paragraph mono">{{section.settings.list_item_2}}</li>
         <li class="paragraph mono">{{section.settings.list_item_3}}</li>
@@ -19,11 +19,6 @@
   {
     "name": "Homepage Health Module",
     "settings": [
-      {
-        "type": "image_picker",
-        "id": "icon",
-        "label": "Icon"
-      },
       {
         "type": "text",
         "id": "title",

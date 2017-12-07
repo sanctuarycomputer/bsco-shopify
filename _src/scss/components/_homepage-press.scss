@@ -2,8 +2,8 @@
   .logo-row {
     justify-content: space-around;
 
-    span {
-      img { min-width: 120px; }
+    a {
+      img { min-width: 120px; max-width: 180px; }
       &:last-of-type {
         display: none;
       }
@@ -14,8 +14,8 @@
     .logo-row {
       justify-content: space-between;
 
-      span {
-        img { min-width: 140px; }
+      a {
+        img { min-width: 140px; max-width: 200px; }
         &:last-of-type {
           display: inline;
         }
