@@ -77,6 +77,14 @@ $mono: 'GT America Mono', monospace;
   }
 }
 
+.quantity-target {
+  font-size: 24px;
+
+  @media #{$medium-up} {
+    font-size: 36px;
+  }
+}
+
 .label {
   font-size: 14px;
 }
