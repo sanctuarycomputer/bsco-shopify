@@ -4,16 +4,24 @@
   .content-wrapper {
     display: block;
   }
+
   .butter-wrapper {
     border-right: 0px;
   }
+
   .ipad-wrapper {
-    border-top: 4px solid color('blue');
+
+    @media #{$medium-up} {
+      border-bottom: 0;
+    }
+
     h2 {
       font-size: 1.4rem;
     }
+
     .ipad-butter {
       padding: 20px 120px;
+
       img {
         width: 100%;
       }
@@ -25,9 +33,11 @@
     .content-wrapper {
       display: flex;
     }
+
     .butter-wrapper {
       border-right: 4px solid color('blue');
     }
+
     .ipad-wrapper {
       border-top: 0;
       border-left: 4px solid color('blue');
