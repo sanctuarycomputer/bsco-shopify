@@ -99,6 +99,10 @@ h6 {
   font-family: $bebas;
 }
 
+h2 {
+  font-weight: 400;
+}
+
 a {
   color: color('red');
   text-decoration: none;
@@ -123,4 +127,10 @@ p {
 
 ul {
   list-style-type: none;
+}
+
+.underline-text {
+  display: inline-block;
+  border-bottom: 2px solid color('black');
+  padding-bottom: 6px;
 }
