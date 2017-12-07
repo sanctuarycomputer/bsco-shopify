@@ -41,6 +41,10 @@
   width: 100%;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 @for $i from 1 through 12 {
   .lg-faux-col-#{$i} {
     @media #{$large-up} {
