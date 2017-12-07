@@ -1,26 +1,30 @@
 $sides: top right left bottom;
 
 .border {
-  border: solid 8px color('blue');
+  border: solid $border-weight-mobile color('blue');
+
+  @media #{$medium-up} {
+    border: solid $border-weight-desktop color('blue');
+  }
 }
 
 @each $value in $sides  {
   .border-#{$value} {
     border-#{$value}: solid color('blue');
-    border-width: 4px;
+    border-width: $border-weight-mobile;
 
     @media #{$medium-up} {
       border-#{$value}: solid color('blue');
-      border-width: 8px;
+      border-width: $border-weight-desktop;
     }
   }
 
   .border-#{$value}-dashed {
     border-#{$value}: dashed color('blue');
-    border-width: 4px;
+    border-width: $border-weight-mobile;
 
     @media #{$medium-up} {
-      border-width: 8px;
+      border-width: $border-weight-desktop;
     }
   }
 }

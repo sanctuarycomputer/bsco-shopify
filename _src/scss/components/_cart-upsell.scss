@@ -1,0 +1,15 @@
+.cart-upsell {
+
+  .cart-upsell-wrapper {
+    &:hover {
+      background: color('white'); 
+    }    
+  }
+
+  .upsell-image-wrapper {
+    border-radius: 50%;
+    height: 140px;
+    overflow: hidden;
+    width: 140px;
+  }
+}

@@ -32,5 +32,25 @@
       }
     }
 
+    /* Specific to the Screensaver Variant */
+    .screensaver-modal-inner {
+      overflow: scroll;
+      max-height: 80vh;
+      text-align: center;
+      img {
+        width: 80%;
+      }
+
+      .caption {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -25%;
+
+        @media #{$medium-up} {
+          bottom: -5%;
+        }
+      }
+    }
   }
 }

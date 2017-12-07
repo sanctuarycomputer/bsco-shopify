@@ -17,15 +17,6 @@
     }
   }
 
-  .product-description {
-    .p1,
-    .p2,
-    .p3,
-    .p4 {
-      padding: 0;
-    }
-  }
-
   .product-quantity,
   .product-price {
     height: $button-height-mobile;
@@ -33,5 +24,14 @@
     @media #{$medium-up} {
       height: $button-height-desktop;
     }
+  }
+}
+
+.product-description {
+  .p1,
+  .p2,
+  .p3,
+  .p4 {
+    padding: 0;
   }
 }
