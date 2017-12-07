@@ -1,4 +1,4 @@
-<div  id="product" 
+<div  id="product"
       class="product block relative"
       data-product="{{ product.id }}"
       data-section-id="{{ section.id }}"
@@ -16,6 +16,7 @@
   <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
   {% include 'product-hero' %}
+  {% include 'product-butter-module' %}
 
   {% unless product == empty %}
     <script type="application/json" data-product-json>

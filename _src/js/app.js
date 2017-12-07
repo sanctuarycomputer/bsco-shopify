@@ -19,7 +19,7 @@ class App {
     new MobileNav();
 
     this.product = (document.getElementById('product')) ? new Product(this.elems) : false;
-    
+
   }
 }
 
