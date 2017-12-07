@@ -1,0 +1,25 @@
+{% capture newsletter_modal_contents %}
+  <div class='newsletter-modal-inner center border p3 max-width-2 mx-auto'>
+    <div id="video-player" data-vimeo-url="{{section.settings.video}}"></div>
+  </div>
+{% endcapture %}
+{% include 'modal', contents: newsletter_modal_contents %}
+
+{% schema %}
+  {
+    "name": "Video Modal",
+    "settings": [
+      {
+        "type": "url",
+        "id": "vimeo_url",
+        "label": "Vimeo Url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video Modal",
+        "category": "Global"
+      }
+    ]
+  }
+{% endschema %}
