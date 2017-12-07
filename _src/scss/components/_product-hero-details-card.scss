@@ -11,14 +11,6 @@
     width: 420px;
   }
 
-  .product-title {
-    text-align: center;
-
-    @media #{$medium-up} {
-      text-align: left;
-    }
-  }
-
   .product-detail {
     @extend .border-right-dashed;
 

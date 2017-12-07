@@ -1,97 +1,96 @@
-<div class="product-hero-details-card col col-3 bg-white border clearfix">
-  <div class="product-title p2 border-bottom">
-    <h1 class="inline mt1 mb0 link-text spacing-1">{{ product.title }}</h1>
-  </div>
+<div class="product-hero-details-card col col-3">
+  <form action="/cart/add" method="post" enctype="multipart/form-data">
+    <div class="product-card-wrapper bg-white border-left border-top border-right clearfix">
+      <div class="product-title py3 border-bottom center">
+        <h1 class="inline-block mt1 mb0 link-text spacing-1">{{ product.title }}</h1>
+      </div>
 
-  <div class="product-details border-bottom clearfix">
-    <div class="product-detail col col-4 py2 center">
-      <span class="product-detail-metric bebas detail block">{{ product.metafields.product_detail.metric_1 }}</span>
-      <span class="product-detail-label helvetica label block">{{ product.metafields.product_detail.label_1 }}</span>
-    </div>
-    <div class="product-detail col col-4 py2 center">
-      <span class="product-detail-metric bebas detail block">{{ product.metafields.product_detail.metric_2 }}</span>
-      <span class="product-detail-label helvetica label block">{{ product.metafields.product_detail.label_2 }}</span>
-    </div>
-    <div class="product-detail col col-4 py2 center">
-      <span class="product-detail-metric bebas detail block">{{ product.metafields.product_detail.metric_3 }}</span>
-      <span class="product-detail-label helvetica label block">{{ product.metafields.product_detail.label_3 }}</span>
-    </div>
-  </div>
+      <div class="product-details border-bottom clearfix">
+        <div class="product-detail col col-4 py2 center">
+          <span class="product-detail-metric bebas detail block">{{ product.metafields.product_detail.metric_1 }}</span>
+          <span class="product-detail-label helvetica label block">{{ product.metafields.product_detail.label_1 }}</span>
+        </div>
+        <div class="product-detail col col-4 py2 center">
+          <span class="product-detail-metric bebas detail block">{{ product.metafields.product_detail.metric_2 }}</span>
+          <span class="product-detail-label helvetica label block">{{ product.metafields.product_detail.label_2 }}</span>
+        </div>
+        <div class="product-detail col col-4 py2 center">
+          <span class="product-detail-metric bebas detail block">{{ product.metafields.product_detail.metric_3 }}</span>
+          <span class="product-detail-label helvetica label block">{{ product.metafields.product_detail.label_3 }}</span>
+        </div>
+      </div>
 
-  <div class="product-description p2 copy border-bottom">{{ product.description }}</div>
+      <div class="product-description p2 copy border-bottom">{{ product.description }}</div>
+      <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+        <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+        <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
+        
+          {% unless product.has_only_default_variant %}
+            {% for option in product.options_with_values %}
+              <div class="selector-wrapper js">
+                <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                  {{ option.name }}
+                </label>
 
-  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
-    <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
-    <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
+                <select
+                  id="SingleOptionSelector-{{ forloop.index0 }}"
+                  data-single-option-selector
+                  data-index="option{{ option.position }}">
+                  {% for value in option.values %}
+                    <option
+                      value="{{ value | escape }}"
+                      {% if option.selected_value == value %}selected="selected"{% endif %}>
+                        {{ value }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </div>
+            {% endfor %}
+          {% endunless %}
 
-    <form action="/cart/add" method="post" enctype="multipart/form-data">
-      {% unless product.has_only_default_variant %}
-        {% for option in product.options_with_values %}
-          <div class="selector-wrapper js">
-            <label for="SingleOptionSelector-{{ forloop.index0 }}">
-              {{ option.name }}
-            </label>
+          {% if product.has_only_default_variant %}
+            {% assign select_class = 'hide' %}
+          {% else %}
+            {% assign select_class = '' %}
+          {% endif %}
+          <select name="id" class="no-js {{ select_class }}" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
 
-            <select
-              id="SingleOptionSelector-{{ forloop.index0 }}"
-              data-single-option-selector
-              data-index="option{{ option.position }}">
-              {% for value in option.values %}
-                <option
-                  value="{{ value | escape }}"
-                  {% if option.selected_value == value %}selected="selected"{% endif %}>
-                    {{ value }}
-                </option>
-              {% endfor %}
-            </select>
+          <div class="clearfix">
+            <div class="product-quantity col col-8 p2 border-right-dashed">
+              {% include 'product-quantity-ui' %}
+            </div>
+
+            <div class="product-price col col-4 right-align p2">
+              {% include 'product-price' %}
+            </div>
           </div>
-        {% endfor %}
-      {% endunless %}
-
-      {% if product.has_only_default_variant %}
-        {% assign select_class = 'hide' %}
-      {% else %}
-        {% assign select_class = '' %}
-      {% endif %}
-      <select name="id" class="no-js {{ select_class }}" data-product-select>
-        {% for variant in product.variants %}
-          <option
-            {% if variant == current_variant %}selected="selected"{% endif %}
-            {% unless variant.available %}disabled="disabled"{% endunless %}
-            value="{{ variant.id }}">
-              {{ variant.title }}
-          </option>
-        {% endfor %}
-      </select>
-
-      <div class="clearfix">
-        <div class="product-quantity col col-8 p2 border-right-dashed">
-          {% include 'product-quantity-ui' %}
-        </div>
-
-        <div class="product-price col col-4 right-align p2">
-          {% include 'product-price' %}
-        </div>
       </div>
-
-      <div class="col col-12">
-        <button
-          type="submit"
-          name="add"
-          class="full-width"
-          data-add-to-cart
-          {% unless current_variant.available %}disabled="disabled"{% endunless %}>
-            <span class="bebas spacing-1" data-add-to-cart-text>
-              {% if current_variant.available %}
-                {{ 'products.product.add_to_cart' | t }}
-              {% else %}
-                {{ 'products.product.sold_out' | t }}
-              {% endif %}
-            </span>
-        </button>
-      </div>
-    </form>
-
-  </div>
+    </div>
+    <div class="col col-12">
+      <button
+        type="submit"
+        name="add"
+        class="full-width"
+        data-add-to-cart
+        {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+          <span class="bebas spacing-1" data-add-to-cart-text>
+            {% if current_variant.available %}
+              {{ 'products.product.add_to_cart' | t }}
+            {% else %}
+              {{ 'products.product.sold_out' | t }}
+            {% endif %}
+          </span>
+      </button>
+    </div>
+  </form>
 </div>
