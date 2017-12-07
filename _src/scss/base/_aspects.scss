@@ -19,6 +19,10 @@
   @include aspect-ratio(1, 1);
 }
 
+.three-two {
+  @include aspect-ratio(3, 2);
+}
+
 .four-three {
   @include aspect-ratio(4, 3);
 }
