@@ -2,11 +2,11 @@
   <div class="grid-container std-max-width mx-auto flex border-top border-right border-left">
     {% for product in collections.frontpage.products %}
       <div class="grid-item flex col-12">
-        <div class="image-container col-4 md-col-12 height-100 relative">
+        <div class="image-container bg-blue col-4 md-col-12 height-100 relative">
           <a href="{{product.url}}">
             {% include 'product-grid' %}
           </a>
-          <h4 class="product-title-overlay mono red black m0 center">{{product.title}}</h4>
+          <h4 class="product-title-overlay mono red black m0 center shadow">{{product.title}}</h4>
         </div>
         <div class="col-8 md-col-12">
           <a class="button-link col-12 height-100 inline-block flex justify-center items-center" href="/">
