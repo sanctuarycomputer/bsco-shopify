@@ -13,23 +13,29 @@
 
 {% if module %}
   <div class="product-healthy-module px3">
-    <div class="content-wrapper clearfix border-left border-right border-top std-max-width mx-auto ">
-      <div class="col sm-col-12 lg-col-6">
-        <div class="four-three">
-          <div class="module-title">
-            <h2 class="bebas large">{{ module.settings.module_1_title }}</h2>
-            <p class="copy">{{ module.settings.module_1_description }}</p>
-          </div>
+    <div class="content-wrapper border-left clearfix relative border-right border-top border-bottom std-max-width mx-auto z-relative">
+      <div class="healthy-module col sm-col-12 lg-col-6">
+        <div class="module-title center">
+          <h2 class="bebas subtitle">{{ module.settings.module_1_title }}</h2>
+          <p class="copy">{{ module.settings.module_1_description }}</p>
         </div>
       </div>
-      <div class="col sm-col-12 lg-col-6">
-        <div class="four-three">
-          <div class="module-title">
-            <h2 class="bebas large">{{ module.settings.module_2_title }}</h2>
-            <p class="copy">{{ module.settings.module_2_description }}</p>
-          </div>
+      <div class="healthy-module col sm-col-12 lg-col-6">
+        <div class="module-title center">
+          <h2 class="bebas subtitle">{{ module.settings.module_2_title }}</h2>
+          <p class="copy">{{ module.settings.module_2_description }}</p>
         </div>
       </div>
+      <div class="avery absolute">
+        <img  class="col-12" 
+              src="{{ 'avery.png' | asset_img_url: '300x' }}"
+              alt="Avery Sticker Image" />
+      </div>
+    </div>
+    <div class="healthy-image-wrapper flex std-max-width mx-auto ">
+      <img  src="{{ module.settings.image | img_url: '1400x' }}"
+            alt="{{ module.settings.image.alt }}"
+            class="col-12" />
     </div>
   </div>
 {% endif %}
