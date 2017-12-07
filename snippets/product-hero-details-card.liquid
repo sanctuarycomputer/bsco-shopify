@@ -83,7 +83,7 @@
         class="full-width"
         data-add-to-cart
         {% unless current_variant.available %}disabled="disabled"{% endunless %}>
-          <span class="bebas spacing-1" data-add-to-cart-text>
+          <span class="bebas spacing-1 white" data-add-to-cart-text>
             {% if current_variant.available %}
               {{ 'products.product.add_to_cart' | t }}
             {% else %}
