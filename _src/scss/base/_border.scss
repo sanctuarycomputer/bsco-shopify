@@ -27,4 +27,25 @@ $sides: top right left bottom;
       border-width: $border-weight-desktop;
     }
   }
+
+  .site-blue {
+    .border-#{$value} {
+      border-#{$value}: solid color('white');
+      border-width: $border-weight-mobile;
+
+      @media #{$medium-up} {
+        border-#{$value}: solid color('white');
+        border-width: $border-weight-desktop;
+      }
+    }
+
+    .border-#{$value}-dashed {
+      border-#{$value}: dashed color('white');
+      border-width: $border-weight-mobile;
+
+      @media #{$medium-up} {
+        border-width: $border-weight-desktop;
+      }
+    }
+  }
 }

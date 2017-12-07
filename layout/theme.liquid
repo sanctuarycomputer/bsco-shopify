@@ -62,11 +62,14 @@
 
 {% if template == 'cart' %}
   {% assign site_background = 'bg-pink' %}
+{% elsif template == 'page.contact' %}
+  {% assign site_background = 'bg-blue site-blue white ' %}
 {% endif %}
 
 <body id="app" class="{{ page_title | handle }} template-{{ template.name | handle }} {{ site_background }}">
 
   {% section 'newsletter-modal' %}
+  {% section 'screensaver-modal' %}
 
   {% section 'header' %}
 

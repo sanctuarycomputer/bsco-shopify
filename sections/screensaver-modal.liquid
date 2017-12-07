@@ -1,0 +1,31 @@
+{% capture screensaver_modal_contents %}
+  <figure class='screensaver-modal-inner center mx-auto'>
+    <img src="{{section.settings.image | img_url: '1900x' }}" />
+    <figcaption class="caption mono red">{{section.settings.caption}}</figcaption>
+  </figure>
+{% endcapture %}
+{% include 'modal', contents: screensaver_modal_contents %}
+
+{% schema %}
+  {
+    "name": "Screensaver Modal",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "caption",
+        "label": "Caption"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Screensaver Modal",
+        "category": "Global"
+      }
+    ]
+  }
+{% endschema %}
