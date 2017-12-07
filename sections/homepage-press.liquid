@@ -1,12 +1,12 @@
 <div id='press' class='border-top mb1 clearfix'>
   <div class="col-12">
     <div class="std-max-width mx-auto center">
-      <h3 class="bebas">{{section.settings.title}}</h3>
+      <h3 class="bebas mt3">{{section.settings.title}}</h3>
       <div class="logo-row flex justify-between items-center py3 px4">
         {% for block in section.blocks %}
-          <span>
-            <img src="{{block.settings.logo | img_url}}"/>
-          </span>
+          <a href="{{ block.settings.linkout }}" target="_blank">
+            <img src="{{ block.settings.logo }}"/>
+          </a>
         {% endfor %}
       </div>
     </div>
@@ -30,9 +30,14 @@
         "name": "Collection",
         "settings": [
           {
-            "type": "image_picker",
+            "type": "url",
             "id": "logo",
             "label": "Logo image"
+          },
+          {
+            "type": "url",
+            "id": "linkout",
+            "label": "Press Link"
           }
         ]
       }
