@@ -50,3 +50,13 @@
     }
   }
 }
+
+.site-blue {
+  .nav {
+    .nav-el, .item-count, .item-text { color: color('white'); }
+    .logo-container {
+      .background { fill: color('white'); }
+      .text { fill: color('blue'); }
+    }
+  }
+}

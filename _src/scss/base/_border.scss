@@ -22,10 +22,10 @@ $sides: top right left bottom;
   .border-#{$value}-dashed {
     border-#{$value}: dashed color('blue');
     border-#{$value}-width: $border-weight-mobile;
-    @if $value == right { border-image: url('dashed-border-y.svg') 58% 37% 35% repeat; }
-    @if $value == left { border-image: url('dashed-border-y.svg') 58% 37% 35% repeat; }
-    @if $value == top { border-image: url('dashed-border-x.svg') 58% 37% 35% repeat; }
-    @if $value == bottom { border-image: url('dashed-border-x.svg') 58% 37% 35% repeat; }
+    @if $value == right { border-image: url('dashed-border-blue-y.svg') 50% 38% 47% repeat; }
+    @if $value == left { border-image: url('dashed-border-blue-y.svg') 50% 38% 47% repeat; }
+    @if $value == top { border-image: url('dashed-border-blue-x.svg') 50% 38% 47% repeat; }
+    @if $value == bottom { border-image: url('dashed-border-blue-x.svg') 50% 38% 47% repeat; }
   }
 
   .site-blue {
@@ -41,11 +41,11 @@ $sides: top right left bottom;
 
     .border-#{$value}-dashed {
       border-#{$value}: dashed color('white');
-      border-width: $border-weight-mobile;
-
-      @media #{$medium-up} {
-        border-width: $border-weight-desktop;
-      }
+      border-#{$value}-width: $border-weight-mobile;
+      @if $value == right { border-image: url('dashed-border-white-y.svg') 50% 38% 47% repeat; }
+      @if $value == left { border-image: url('dashed-border-white-y.svg') 50% 38% 47% repeat; }
+      @if $value == top { border-image: url('dashed-border-white-x.svg') 50% 38% 47% repeat; }
+      @if $value == bottom { border-image: url('dashed-border-white-x.svg') 50% 38% 47% repeat; }
     }
   }
 }
