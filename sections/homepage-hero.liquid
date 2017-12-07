@@ -1,12 +1,12 @@
 <div class="homepage-hero relative">
-  <div class="homepage-hero-background col col-12 absolute" style="background: url('{{- section.settings.image | img_url: '1900x' -}}') no-repeat center; background-size: cover;">
+  <div class="homepage-hero-background col col-12 absolute" style="background: url('{{- section.settings.image -}}') no-repeat center; background-size: cover;">
     <div class="gradient-blue"></div>
   </div>
   <div class="homepage-hero-info absolute z-relative sm-col-12 md-col-8">
-    <span class="subtitle bebas white block">{{- section.settings.subtitle -}}</span>
-    <span class="title bebas white block">{{- section.settings.title -}}</span>
+    <span class="subtitle bebas white block mb1 shadow">{{- section.settings.subtitle -}}</span>
+    <span class="title bebas white block shadow">{{- section.settings.title -}}</span>
     <span class="sm-hide red">
-      <a class="red video-trigger mono" href="">{{- section.settings.link_text -}}</a>
+      <a class="shadow large red video-trigger mono" href="">{{- section.settings.link_text -}}</a>
     </span>
   </div>
 </div>
@@ -39,7 +39,7 @@
         "label": "Video Link"
       },
       {
-        "type": "image_picker",
+        "type": "url",
         "id": "image",
         "label": "Image"
       }
