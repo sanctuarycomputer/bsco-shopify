@@ -7,8 +7,6 @@
 
   .link-list {
     display: none;
-    @extend .border-left;
-    @extend .border-right-dashed;
   }
 
   .item-count {
@@ -40,7 +38,7 @@
     }
 
     .link-list {
-      display: flex;
+      display: block;
     }
 
     .mobile-menu {
