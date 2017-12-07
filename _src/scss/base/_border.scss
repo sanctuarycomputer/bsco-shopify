@@ -11,21 +11,24 @@ $sides: top right left bottom;
 @each $value in $sides  {
   .border-#{$value} {
     border-#{$value}: solid color('blue');
-    border-width: $border-weight-mobile;
+    border-#{$value}-width: $border-weight-mobile;
 
     @media #{$medium-up} {
       border-#{$value}: solid color('blue');
-      border-width: $border-weight-desktop;
+      border-#{$value}-width: $border-weight-desktop;
     }
   }
 
   .border-#{$value}-dashed {
     border-#{$value}: dashed color('blue');
-    border-width: $border-weight-mobile;
-
-    @media #{$medium-up} {
-      border-width: $border-weight-desktop;
+    // border-#{$value}-width: $border-weight-mobile;
+    @if $value == right { 
+      border-image: url('dashed-border-y.svg') 60% 25% 35% repeat;
+      border-width: 0 $border-weight-mobile 0 0;
     }
+    @if $value == left { border-image: url('dashed-border-y.svg') 60% 25% 35% repeat; }
+    @if $value == top { border-image: url('dashed-border-x.svg') 60% 25% 35% repeat; }
+    @if $value == bottom { border-image: url('dashed-border-x.svg') 60% 25% 35% repeat; }
   }
 
   .site-blue {
