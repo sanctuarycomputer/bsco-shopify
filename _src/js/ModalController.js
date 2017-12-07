@@ -33,8 +33,8 @@ export default class ModalController {
     this.newsletterModal = this.findModal(CLASSES.Newsletter);
     this.showNewsletterSignupIfNecessary();
     /* Screensaver Concerns */
-    this.screensaverTimeout = null;
     this.screensaverModal = this.findModal(CLASSES.Screensaver);
+    this.screensaverTimeout = null;
     this.screensaverInit = false;
   }
 
@@ -46,11 +46,11 @@ export default class ModalController {
 
   bindScreensaverListeners() {
     SCREENSAVER.Events.forEach((evt) => {
-      document.addEventListener(evt, e => this.handleScreenSaverEvent(e));
+      document.addEventListener(evt, e => this.handleScreensaverEvent(e));
     });
   }
 
-  handleScreenSaverEvent(e) {
+  handleScreensaverEvent(e) {
     if (this.screensaverModal.classList.contains(CLASSES.Active)) {
       this.screensaverModal.classList.remove(CLASSES.Active);
     }
