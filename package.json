@@ -45,6 +45,7 @@
   "homepage": "https://github.com/sanctuarycomputer/bsco-shopify#readme",
   "dependencies": {
     "@vimeo/player": "^2.2.1",
+    "axios": "^0.17.1",
     "clean-css": "^4.1.9"
   }
 }

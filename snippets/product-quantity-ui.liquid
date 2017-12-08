@@ -2,10 +2,25 @@
   {% assign quantity = 1 %}
 {% endunless %}
 
+{% unless update %}
+  {% assign quantity_id   = 'quantity-' | append: product.id %}
+  {% assign quantity_name = 'updates[]' %}
+{% else %}
+  {% assign quantity_id = 'updates_' | append: product.key %}
+  {% assign quantity_name = 'quantity' %}
+{% endunless %}
+
 <div class="product-quantity-ui quantity clearfix height-100">
   <div class="shopify-quantity hide">
     <label for="quantity">{{ 'products.product.quantity' | t }}</label>
-    <input id="quantity-{{ product.id }}" class="quantity" data-product="{{ product.id }}" type="number" name="quantity" value="{{ quantity }}" min="1">
+    <input  id="{{ quantity_id }}"
+            class="quantity"
+            data-product="{{ product.id }}"
+            data-quantity="{{ product.id }}"
+            type="number" 
+            name="{{ quantity_name }}"
+            value="{{ quantity }}"
+            min="1">
   </div>
   <div class="quantity-ui relative height-100">
     <button class="quantity-decrement quantity-button col col-4 bg-pink height-100 center relative" data-product="{{ product.id }}">
