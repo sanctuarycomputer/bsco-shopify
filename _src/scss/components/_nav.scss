@@ -41,6 +41,10 @@
       display: none;
     }
 
+    .logo-container {
+      padding-right: 2rem;
+    }
+
     .link-list {
       display: block;
     }
@@ -56,7 +60,7 @@
     .nav-el, .item-count, .item-text {
       color: color('white');
     }
-    .logo-container {
+    .logo-link {
       .background { fill: color('white'); }
       .text { fill: color('blue'); }
     }
