@@ -1,11 +1,11 @@
 {% assign line_price = product.quantity | times: product.variant.price %}
 
-<div  class="line-item clearfix relative col col-12 border-bottom border-left border-right"
+<div  class="line-item relative flex col col-12 border-bottom border-left border-right"
       data-product="{{ product.id }}"
       data-variant="{{ product.variant.id }}">
 
   <div class="line-item-image-wrapper height-100 col col-3">
-    <img  class="line-item-image height-100 col-12"
+    <img  class="line-item-image height-100"
           src="{{ product.image.src | img_url: '300x300', crop: 'center' }}"
           alt="{{ product.image.alt }}" />
   </div>
