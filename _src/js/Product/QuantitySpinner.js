@@ -41,10 +41,10 @@ class QuantitySpinner {
         window.location.reload();
       })
       .catch(function (error) {
-        console.log(error);
+        console.log('err', error);
       });
     }
-    
+
     const quantity  = (action == 'increment') ? this.increment($quantity.value) : this.decrement($quantity.value);
 
     $quantity.setAttribute('value', quantity);
