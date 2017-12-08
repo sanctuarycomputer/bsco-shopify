@@ -20,20 +20,24 @@
       }
 
       &:first-of-type {
-        border-bottom: dashed calc(#{$border-weight-mobile} / 2) color('blue');
+        border-bottom: dashed $border-weight-mobile color('blue');
+        border-bottom-width: $border-weight-mobile;
+        border-image: url('dashed-border-blue-x.svg') 50% 38% 47% repeat;
 
         @media #{$medium-up} {
           border-bottom: 0;
           border-right: dashed calc(#{$border-weight-desktop} / 2) color('blue');
+          border-right-width: calc(#{$border-weight-mobile} / 2);
+          border-image: url('dashed-border-blue-y.svg') 47% 38% 47% repeat;
         }
       }
 
       &:nth-of-type(2) {
-        border-top: dashed calc(#{$border-weight-mobile} / 2) color('blue');
-
         @media #{$medium-up} {
           border-top: 0;
           border-left: dashed calc(#{$border-weight-desktop} / 2) color('blue');
+          border-left-width: calc(#{$border-weight-mobile} / 2);
+          border-image: url('dashed-border-blue-y.svg') 47% 38% 47% repeat;
         }
       }
     }
