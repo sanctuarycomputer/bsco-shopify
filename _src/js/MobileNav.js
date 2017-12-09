@@ -11,7 +11,11 @@ export default class MobileNav {
   }
 
   initListener() {
-    this.mobileNavToggle[0].addEventListener('click', (e) =>  this.toggleClass(e));
+    if (this.mobileNavToggle) {
+      for (let i = 0; i < this.mobileNavToggle.length; i++) {
+        this.mobileNavToggle[i].addEventListener('click', (e) =>  this.toggleClass(e));
+      }
+    }
   }
 
   toggleClass() {
