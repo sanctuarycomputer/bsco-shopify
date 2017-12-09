@@ -1,0 +1,96 @@
+{% assign upsell_image      = section.settings.upsell_image %}
+{% assign upsell_collection = collections[section.settings.upsell_collection] %}
+{% assign upsell_products   = upsell_collection.products %}
+
+{% assign min   = 'now' | date: '%M' | modulo: 2 %}
+{% assign hour  = 'now' | date: '%H' | modulo: 2 %}
+
+{% if min > 0 and hour > 0 %}
+  {% assign upsell_index = 0 %}
+{% elsif min > 0 and hour <= 0 %}
+  {% assign upsell_index = 1 %}
+{% elsif min <= 0 and hour > 0 %}
+  {% assign upsell_index = 2 %}
+{% else %}
+  {% assign upsell_index = 3 %}
+{% endif %}
+
+{% if upsell_index > upsell_products.length %}
+  {% assign limiter = upsell_index | divided_by: upsell_products.length | floor | times: upsell_products.length %}
+  {% assign upsell_index = upsell_index | minus: limiter %}
+{% endif %}
+
+{% assign upsell_product = upsell_products[upsell_index] %}
+
+<div class="cart-empty">
+  <div class="cart-empty-text col-12 border-bottom center p3">
+    <span class="bebas subtitle spacing-1">{{ section.settings.text }}</span>
+
+    <a  class="md-hide lg-hide xl-hide"
+        href="/#supply"
+        title="Take me home I wanna buy a box!">
+
+      <img  class="block col-6 mx-auto my3"
+        src="{{ upsell_image.src | img_url: '600x' }}"
+        alt="{{ upsell_image.alt }}" />
+
+      <span class="red mono">Take me home I wanna buy a box!</span>
+    </a>
+  </div>
+
+  <div class="cart-random-upsell col-12 px3 border-bottom xs-hide sm-hide">
+    <div class="border-left-dashed border-right-dashed px2 pt3 pb1 sm-col-12 md-col-8 lg-col-6 mx-auto">
+      <img  class="block col-6 mx-auto mb3"
+            src="{{ upsell_image.src | img_url: '600x' }}"
+            alt="{{ upsell_image.alt }}" />
+
+      <div class="upsell-text px3 py2 col-12 center">
+        <div class="mb3">
+          <span class="mono">Add a random Baking Supply Box to your cart?</span>
+        </div>
+        <div class="cart-add">
+          <a href="/cart/add/{{ upsell_product.selected_or_first_available_variant.id }}">
+            <span class="bebas red subtitle">Sure, I'm wild like that.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="all-products col-12 p3 center xs-hide sm-hide">
+    <a href="/#supply" title="Take me home I wanna buy a box!">
+      <span class="red mono">Actually, let me see all of your wares</span>
+    </a>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Cart Empty Module",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Empty Cart Text"
+      },
+      {
+        "type": "collection",
+        "id": "upsell_collection",
+        "label": "Random Upsell Target Collection",
+        "info": "The random baking kit button will add one of the products from this collection."
+      },
+      {
+        "type": "image_picker",
+        "id": "upsell_image",
+        "label": "Random Upsell Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cart Empty Module",
+        "category": "Cart"
+      }
+    ]
+  }
+{% endschema %}
