@@ -1,29 +1,38 @@
-{% assign line_price = product.quantity | times: product.variant.price %}
+{% assign line_price  = item.quantity | times: item.variant.price %}
+{% assign product     = item.product %}
+{% assign grid_image  = item.image %}
+
+{% for image in product.images %}
+  {% if image.src contains '-grid' %}
+    {% assign grid_image = image %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 
 <div  class="line-item relative flex col col-12 border-bottom border-left border-right"
-      data-product="{{ product.id }}"
-      data-variant="{{ product.variant.id }}">
+      data-product="{{ item.id }}"
+      data-variant="{{ item.variant.id }}">
 
   <div class="line-item-image-wrapper height-100 col col-3">
     <img  class="line-item-image height-100"
-          src="{{ product.image.src | img_url: '300x300', crop: 'center' }}"
-          alt="{{ product.image.alt }}" />
+          src="{{ grid_image.src | img_url: '300x300', crop: 'center' }}"
+          alt="{{ grid_image.alt }}" />
   </div>
 
   <div class="line-item-info-wrapper height-100 col col-9 relative">
     <div class="product-title">
-      <span class="bebas subtitle">{{ product.title }}</span>
+      <span class="bebas subtitle">{{ item.title }}</span>
     </div>
     <div class="product-description sm-hide xs-hide">
-      <span class="bebas mono copy">{{ product.product.description }}</span>
+      <span class="bebas mono copy">{{ item.item.description }}</span>
     </div>
 
     <div class="line-item-ui col col-12 clearfix">
       <div class="line-item-quantity-wrapper col col-8 lg-col-4 absolute">
-        {% include 'product-quantity-ui', quantity: product.quantity, update: true %}
+        {% include 'product-quantity-ui', quantity: item.quantity, update: true %}
       </div>
       <div class="line-item-price-wrapper col absolute right">
-        {% include 'product-price', current_variant: product.variant, classes: 'subtitle', price: line_price %}
+        {% include 'product-price', current_variant: item.variant, classes: 'subtitle', price: line_price %}
       </div>
     </div>
   </div>
