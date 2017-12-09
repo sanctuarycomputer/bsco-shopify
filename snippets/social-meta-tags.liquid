@@ -7,16 +7,20 @@
   Template specific overides
 {% endcomment %}
 {%- if template.name == 'product' -%}
-  {%- assign og_title = product.title | strip_html -%}
+  {%- assign og_title = product.title | strip_html | append: ' - ' | append: shop.name -%}
   {%- assign og_type = 'product' -%}
   {%- capture og_image_tags -%}
     {%- for image in product.images limit: 3 -%}
-      <meta property="og:image" content="http:{{ image.src | product_img_url: '1024x1024' }}">
+      {% if image.src contains '-hero' %}
+        <meta property="og:image" content="http:{{ image.src | product_img_url: '1024x1024' }}">
+      {% endif %}
     {%- endfor -%}
   {%- endcapture -%}
   {%- capture og_image_secure_url_tags -%}
     {%- for image in product.images limit: 3 -%}
-      <meta property="og:image:secure_url" content="https:{{ image.src | product_img_url: '1024x1024' }}">
+      {% if image.src contains '-hero' %}
+        <meta property="og:image:secure_url" content="https:{{ image.src | product_img_url: '1024x1024' }}">
+      {% endif %}
     {%- endfor -%}
   {%- endcapture -%}
 
@@ -33,6 +37,11 @@
   {%- assign og_title = shop.name -%}
   {%- assign og_url = shop.url -%}
   {%- assign og_description = shop.description | default: shop.name -%}
+
+{%- else -%}
+  {%- capture og_image_tags -%}<meta property="og:image" content="https://d25abud0gs2vmh.cloudfront.net/images/share.jpg">{%- endcapture -%}
+  {%- capture og_image_secure_url_tags -%}<meta property="og:image:secure_url" content="https://d25abud0gs2vmh.cloudfront.net/images/share.jpg">{%- endcapture -%}
+  
 {%- endif -%}
 
 <meta property="og:site_name" content="{{ shop.name }}">
@@ -40,10 +49,12 @@
 <meta property="og:title" content="{{ og_title }}">
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description }}">
+
 {%- if template.name == 'product' -%}
   <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
   <meta property="og:price:currency" content="{{ shop.currency }}">
 {%- endif -%}
+
 {{ og_image_tags }}
 {{ og_image_secure_url_tags }}
 
