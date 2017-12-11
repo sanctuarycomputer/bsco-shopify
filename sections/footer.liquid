@@ -4,9 +4,36 @@
       <div class="copyright col col-12 md-col-6 center">
         <span class="bebas large-2">The Baking Supply Co, 2017</span>
       </div>
-      <div class="socials col col-12 md-col-6 center">
-        <span class="mono large">Instagram | Twitter | Facebook</span>
+      <div class="socials col col-12 md-col-6 center p2">
+        {% for link in linklists[section.settings.list].links %}
+          <a href="{{ link.url }}" target="_blank">
+            <span class="mono social">{{ link.title }}</span>
+          </a>
+
+          {% unless forloop.last == true %}
+            <span class="mono social">&nbsp;&#124;&nbsp;</span>
+          {% endunless %}
+        {% endfor %}
       </div>
     </div>
   </div>
 </footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "list",
+        "label": "Footer Menu"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Footer",
+        "category": "Global"
+      }
+    ]
+  }
+{% endschema %}
