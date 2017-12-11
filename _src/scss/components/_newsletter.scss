@@ -1,7 +1,15 @@
 .newsletter {
+  .form-wrapper-parent {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   @media #{$large-up} {
-    .form-wrapper {
-      float: right;
+    .form-wrapper-parent {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      .form-wrapper {
+        float: right;
+      }
     }
   }
 }
