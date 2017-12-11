@@ -6,7 +6,7 @@
     svg { width: 100%; }
   }
 
-  .mobile-nav-toggle {
+  .leaf-container {
     display: flex;
     svg {
       width: 100%;
@@ -49,7 +49,7 @@
   }
 
   @media #{$large-up} {
-    .mobile-nav-toggle {
+    .leaf-container {
       display: none;
     }
 

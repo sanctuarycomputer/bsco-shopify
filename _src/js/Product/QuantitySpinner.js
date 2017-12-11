@@ -31,11 +31,9 @@ class QuantitySpinner {
     const $target   = document.getElementById(`quantity-target-${product}`);
 
     if ($quantity.id.split('_')[0] == 'updates') {
-      let updates = {};
-      updates[product] = (action == 'increment') ? parseInt(original) + 1 : parseInt(original) - 1;
-      
-      axios.post('/cart/update.js', {
-        updates: updates
+      axios.post('/cart/change.js', {
+        quantity: (action == 'increment') ? parseInt(original) + 1 : parseInt(original) - 1,
+        line: parseInt($quantity.dataset.line)
       }).then(function (response) {
         console.log(response);
         window.location.reload();

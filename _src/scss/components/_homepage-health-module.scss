@@ -5,6 +5,11 @@
 
   .right-section {
     text-align: center;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
   }
 
   @media #{$medium-up} {
@@ -15,6 +20,11 @@
     .right-section {
       text-align: left;
       padding-left: 3rem;
+
+      ul {
+        list-style-type: katakana;
+        padding-left: $list-padding;
+      }
     }
   }
 }

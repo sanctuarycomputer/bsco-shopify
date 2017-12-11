@@ -49,7 +49,7 @@ $mono: 'GT America Mono', monospace;
 }
 
 .subtitle {
-  font-size: 22px;
+  font-size: 26px;
   letter-spacing: 1.4px;
 
   @media #{$medium-up} {
@@ -87,6 +87,14 @@ $mono: 'GT America Mono', monospace;
 
 .label {
   font-size: 14px;
+}
+
+.social {
+  font-size: 12px;
+
+  @media #{$medium-up} {
+    font-size: 1.5em;
+  }
 }
 
 .link-text {
@@ -153,7 +161,7 @@ p {
 
 ul {
   list-style-type: katakana;
-  padding-left: 54px;
+  padding-left: $list-padding;
 }
 
 .underline-text {
