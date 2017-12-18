@@ -1,6 +1,6 @@
 <nav class="nav">
   <div class="col-12 flex std-max-width mx-auto">
-    <div class="mobile-nav-toggle col-2 flex justify-center items-center py2">
+    <div class="mobile-nav-toggle leaf-container col-2 flex justify-center items-center py2">
       {% include 'icon-leaf' %}
     </div>
     <div class="logo-container col-8 lg-col-2 flex justify-center items-center py2">
@@ -11,7 +11,7 @@
     <div class="link-list col-8 border-left">
       <div class="border-right-dashed col-12 lg-flex items-center height-100 justify-between py2 px3">
         {% for link in linklists.main-menu.links %}
-          <a href="{{ link.url }}" {% if link.title == 'Our Butter Recipes' or link.title == 'Blog' %} target="_blank" {% endif %}>
+          <a href="{{ link.url }}" {% if link.title == 'Infuse' or link.title == 'Read' %} target="_blank" {% endif %}>
             <h3 class="nav-el large-2 bebas black">{{ link.title }}</h3>
           </a>
         {% endfor %}
@@ -32,7 +32,7 @@
   <div class="mobile-menu">
     <div class="mobile-link-list height-100 flex flex-column justify-around center">
       {% for link in linklists.main-menu.links %}
-        <a class="block" href="{{ link.url }}" {% if link.title == 'Our Butter Recipes' or link.title == 'Blog' %} target="_blank" {% endif %}>
+        <a class="mobile-nav-toggle block" href="{{ link.url }}" {% if link.title == 'Infuse' or link.title == 'Read' %} target="_blank" {% endif %}>
           <h3 class="large-3 bebas red m0">{{ link.title }}</h3>
         </a>
       {% endfor %}
