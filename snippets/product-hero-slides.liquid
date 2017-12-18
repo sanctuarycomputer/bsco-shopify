@@ -1,9 +1,7 @@
 <div class="product-hero-slides col col-12">
   {% for image in product.images %}
     {% if image.src contains '-hero' %}
-      <div class="product-hero-slide relative">
-        <img class="absolute" src="{{ image.src | img_url: '1800x' }}" alt="{{ img.alt | escape }}" />
-      </div>
+      <div class="product-hero-slide relative" style="background: url({{ image.src | img_url: '1800x' }}) no-repeat center; background-size: cover;"></div>
     {% endif %}
   {% endfor %}
 </div>
