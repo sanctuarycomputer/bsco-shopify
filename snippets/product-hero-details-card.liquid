@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <div class="product-description p2 copy border-bottom">{{ product.description }}</div>
+      <div class="product-description p2 small border-bottom">{{ product.description }}</div>
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">
         <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">

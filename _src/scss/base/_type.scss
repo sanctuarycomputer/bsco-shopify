@@ -22,6 +22,16 @@ $mono: 'GT America Mono', monospace;
   letter-spacing: 2px;
 }
 
+.small {
+  font-size: 14px;
+  line-height: 28px;
+
+  @media #{$medium-up} {
+    font-size: 18px;
+    line-height: 36px;
+  }
+}
+
 .large {
   font-size: 1.5em;
 }
