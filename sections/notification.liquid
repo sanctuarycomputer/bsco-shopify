@@ -1,0 +1,25 @@
+{% if section.settings.notification_enabled == true %}
+  <div class="notification bg-blue flex items-center justify-center center">
+    <p class='white'>{{ section.settings.notification_text }}</p>
+  </div>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Notification",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "notification_enabled",
+        "label": "Show Notification Flag"
+      },
+      {
+        "type": "text",
+        "id": "notification_text",
+        "label": "Notification Flag Text",
+        "placeholder": "It's Healthy On A Real Level"
+      }
+    ]
+  }
+{% endschema %}
