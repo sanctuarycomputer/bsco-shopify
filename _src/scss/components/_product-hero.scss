@@ -1,0 +1,7 @@
+.product-hero {
+  min-height: 0;
+
+  @media #{$medium-up} {
+    min-height: 660px;
+  }
+}
