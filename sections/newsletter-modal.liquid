@@ -1,11 +1,11 @@
 {% capture newsletter_modal_contents %}
-  <div class='newsletter-modal-inner center border p3 max-width-2 mx-auto'>
-    <div class='image mb3'>
-      <div class='content'>
+  <div class="newsletter-modal-inner center border p3 max-width-2 mx-auto">
+    <div class="image mb3">
+      <div class="content">
         <img
-          class='fit'
-          src='{{ section.settings.image.src }}'
-          alt='{{ section.settings.image.alt }}'
+          class="fit"
+          src="{{ section.settings.image.src | img_url: '600x' }}"
+          alt="{{ section.settings.image.alt }}"
         />
       </div>
     </div>
