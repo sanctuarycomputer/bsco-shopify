@@ -1,6 +1,5 @@
 .line-item {
-  height: auto;
-  min-height: 90px;
+  height: 110px;
   overflow: hidden;
 
   @media #{$medium-up} {
@@ -9,23 +8,20 @@
 
   .line-item-image-wrapper {
     overflow: hidden;
+    width: 110px;
 
-    img {
-      align-self: center;
-      max-height: 90px;
-      width: auto;
-
-      @media #{$medium-up} {
-        max-height: none;
-      }
+    @media #{$medium-up} {
+      width: 300px;
     }
   }
 
   .line-item-info-wrapper {
     padding: .5em;
+    width: calc(100% - 110px);
 
     @media #{$medium-up} {
       padding: 2em;
+      width: calc(100% - 300px);
     }
   }
 
@@ -67,15 +63,13 @@
   }
 
   .line-item-quantity-wrapper {
-    margin-left: -.8em;
-    margin-top: .5em;
+    bottom: .5em;
+    left: 0;
+    position: absolute;
 
     @media #{$medium-up} {
       bottom: 1em;
       left: .5em;
-      margin-left: 0;
-      margin-top: 0;
-      position: absolute;
       width: 33.3%;
     }
   }
