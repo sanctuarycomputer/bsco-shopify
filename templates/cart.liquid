@@ -11,17 +11,17 @@
       
       {% section 'cart-upsell' %}
 
-      <div  class="checkout-button col col-12 border-top center clearfix relative"
-            style="background-image: url({{ 'dripping-eye-red-pink.svg' | asset_url }});">
-        <div class="gradient-blue">
-        </div>
-        <a href="/checkout" title="Checkout"> 
-          <div class="col col-12 absolute-center">
-            <span class="uppercase blue title bebas">{{ 'cart.general.checkout' | t }} &mdash; </span>
-            <span class="cart-price uppercase blue title bebas">{{ cart.total_price | money }}</span>
+      <a href="/checkout" title="Checkout"> 
+        <div  class="checkout-button col col-12 border-top center clearfix relative"
+              style="background-image: url({{ 'dripping-eye-red-pink.svg' | asset_url }});">
+          <div class="gradient-blue">
           </div>
-        </a>
-      </div>
+            <div class="col col-12 absolute-center">
+              <span class="uppercase blue title bebas">{{ 'cart.general.checkout' | t }} &mdash; </span>
+              <span class="cart-price uppercase blue title bebas">{{ cart.total_price | money }}</span>
+            </div>
+        </div>
+      </a>
     </div>
 
   </form>

@@ -1,10 +1,22 @@
 .newsletter {
+
+  .newsletter-inner {
+    flex-wrap: wrap;
+    
+    > div {
+      flex-shrink: 0;
+    }
+  }
+
   .form-wrapper-parent {
+    order: 10;
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  @media #{$large-up} {
+
+  @media #{$medium-up} {
     .form-wrapper-parent {
+      order: 0;
       padding-left: 4rem;
       padding-right: 4rem;
       .form-wrapper {
