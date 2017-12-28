@@ -79,6 +79,16 @@ $mono: 'GT America Mono', monospace;
   }
 }
 
+.callout {
+  font-size: 18px;
+  line-height: 40px;
+
+  @media #{$medium-up} {
+    font-size: 22px;
+    line-height: 46px;
+  }
+}
+
 .detail {
   font-size: 18px;
 
@@ -175,7 +185,6 @@ ul {
 }
 
 .underline-text {
-  display: inline-block;
   border-bottom: 2px solid color('black');
   padding-bottom: 6px;
 }
