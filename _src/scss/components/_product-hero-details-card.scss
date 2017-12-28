@@ -13,6 +13,9 @@
 
   .product-detail {
     @extend .border-right-dashed;
+    border-bottom: 0;
+    border-left: 0;
+    border-top: 0;
 
     &:last-of-type {
       border: 0;

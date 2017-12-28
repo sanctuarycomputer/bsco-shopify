@@ -16,7 +16,7 @@
   <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
   {% include 'product-hero' %}
-  {% include 'product-butter-module' %}
+  {% section 'product-infuse-module' %}
   {% section 'product-healthy-module' %}
 
   {% unless product == empty %}

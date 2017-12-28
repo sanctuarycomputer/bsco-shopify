@@ -4,8 +4,10 @@
 
   {% if key == 'healthy-module' %}
     {% for block in section.blocks %}
-      {% assign module = block %}
-      {% break %}
+      {% if block.settings.slug == val %}
+        {% assign module = block %}
+        {% break %}
+      {% endif %}
     {% endfor %}
     {% break %}
   {% endif %}

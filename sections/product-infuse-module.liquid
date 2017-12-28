@@ -1,0 +1,94 @@
+{% for tag in product.tags %}
+  {% assign key = tag | split: ':' | first %}
+  {% assign val = tag | split: ':' | last %}
+
+  {% if key == 'infuse-module' %}
+    {% for block in section.blocks %}
+      {% if block.settings.slug == val %}
+        {% assign module = block %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+
+{% if module %}
+  <div class="product-infuse-module border-top px3">
+    <div class="std-max-width mx-auto border-left border-right">
+      <div class="mx-auto">
+        <h2 class="m0 py4 px2 center spacing-1">{{ module.settings.title }}</h2>
+      </div>
+      <div class="mx-auto border-top">
+        <div class="content-wrapper clearfix">
+
+          <div class="infuse-wrapper col sm-col-12 md-col-6">
+            <div class="four-three">
+              <div class="content" style="background: url('{{ module.settings.image.src | img_url: '1000x' }}') no-repeat center; background-size: cover;"></div>
+            </div>
+          </div>
+          <div class="ipad-wrapper sm-col-12 md-col-6 p2 center border-bottom">
+            <div class="ipad-infuse">
+              <img src="{{ 'butter-pad.jpg' | asset_url }}" />
+            </div>
+            <div class="max-width-1 mx-auto">
+              <a href="{{ module.settings.link }}" target="_blank">
+                <span class="mono callout underline-text mb0">{{ module.settings.link_text }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "PDP Infuse Module",
+    "blocks": [
+      {
+        "type": "pdp-healthy-module",
+        "name": "PDP Infuse Module Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "slug",
+            "label": "Slug",
+            "placeholder": "healthy-kits"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Section Title",
+            "placeholder": "We can show you how to infuse your oils. (No pressure though.)"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link Text",
+            "placeholder": "See our iPad friendly infusion guide here"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "PDP Infuse Module",
+        "category": "Product Page"
+      }
+    ]
+  }
+{% endschema %}
