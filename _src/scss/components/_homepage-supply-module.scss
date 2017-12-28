@@ -4,6 +4,11 @@
 
     .grid-item {
       flex-direction: row;
+
+      h4 {
+        font-weight: 400;
+      }
+
       &:nth-of-type(2) {
         flex-direction: row-reverse;
         @extend .border-top;
@@ -15,8 +20,12 @@
         display: none;
       }
 
-      .button-text {
+      .button-link {
         display: none;
+
+        > * {
+          transition: $transition;
+        }
       }
     }
   }
@@ -49,15 +58,24 @@
             font-weight: 400;
             line-height: 1.5;
           }
+        }
+
+        .button-link {
+          display: block;
+          height: $button-height-desktop;
+          flex-shrink: 0;
+          flex-wrap: wrap;
+          overflow: hidden;
+
+          > * {
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
 
           &:hover {
-            .product-grid-image {
-              opacity: 0.6;
-            }
-            .product-title-overlay {
-              opacity: 1;
-              transform: translateX(-50%) translateY(-50%);
-            }
+            opacity: 1;
           }
         }
 
@@ -65,9 +83,37 @@
           display: block;
         }
 
+        .quick-add {
+          display: block;
+          opacity: 0;
+          transform: translateY(50%);
+          transition: $transition;
+        }
+
         .product-title {
           opacity: 0;
           display: none;
+        }
+
+        &:hover {
+          .product-grid-image {
+            opacity: 0.4;
+          }
+
+          .button-text {
+            opacity: 0;
+            transform: translateY(-50%);
+          }
+
+          .quick-add {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          .product-title-overlay {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-50%);
+          }
         }
       }
     }
