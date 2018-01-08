@@ -3,6 +3,7 @@ import Player from '@vimeo/player';
 const CLASSES = {
   Wrapper: 'modal',
   Active: 'active',
+  Close: 'close-modal',
   Contents: 'contents',
   Newsletter: 'newsletter-modal-inner',
   Screensaver: 'screensaver-modal-inner',
@@ -64,6 +65,7 @@ export default class ModalController {
   }
 
   handleClick({ target }) {
+    console.log(target)
     if (this.player) {
       window.removeEventListener('resize', e => this.resizeVideo());
       this.player.unload();
@@ -73,7 +75,8 @@ export default class ModalController {
       return target.classList.remove(CLASSES.Active);
     }
 
-    if (target.classList.contains(CLASSES.Contents)) {
+    if (target.classList.contains(CLASSES.Contents) || 
+        target.classList.contains(CLASSES.Close)) {
       return target.parentNode.classList.remove(CLASSES.Active);
     }
   }
