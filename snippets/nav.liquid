@@ -9,7 +9,7 @@
       </a>
     </div>
     <div class="link-list col-8 border-left">
-      <div class="border-right-dashed col-12 lg-flex items-center height-100 justify-between py2 px3">
+      <div class="border-right-dashed col-12 lg-flex items-center height-100 justify-around py2 px3">
         {% for link in linklists.main-menu.links %}
           <a href="{{ link.url }}" {% if link.title == 'Infuse' or link.title == 'Read' %} target="_blank" {% endif %}>
             <h3 class="nav-el large-2 bebas black">{{ link.title }}</h3>
