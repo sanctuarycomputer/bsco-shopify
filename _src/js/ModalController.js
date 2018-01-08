@@ -65,7 +65,6 @@ export default class ModalController {
   }
 
   handleClick({ target }) {
-    console.log(target)
     if (this.player) {
       window.removeEventListener('resize', e => this.resizeVideo());
       this.player.unload();
