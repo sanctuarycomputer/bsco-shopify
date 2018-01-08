@@ -5,6 +5,7 @@ form {
 }
 
 input[type="text"],
+input[type="email"],
 textarea {
   @extend .border-box;
   border: color('blue') thin solid;

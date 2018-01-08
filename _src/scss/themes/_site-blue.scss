@@ -1,0 +1,41 @@
+.site-blue {
+  p,
+  span {
+    color: color('white');
+  }
+
+  button,
+  .btn,
+  input[type="submit"] {
+    background: color('white');
+    color: color('blue');
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    background: color('blue');
+    border-color: color('white');
+    color: color('white');
+  }
+  
+  .notification {
+    background: color('white');
+    color: color('blue');
+
+    p {
+      color: color('blue');
+    }
+  }
+
+  .nav {
+    .nav-el, .item-count, .item-text {
+      color: color('white');
+    }
+
+    .logo-link {
+      .background { fill: color('white'); }
+      .text { fill: color('blue'); }
+    }
+  }
+}

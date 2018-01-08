@@ -66,25 +66,3 @@
     }
   }
 }
-
-.site-blue {
-  .notification {
-    background: color('white');
-    color: color('blue');
-
-    p {
-      color: color('blue');
-    }
-  }
-
-  .nav {
-    .nav-el, .item-count, .item-text {
-      color: color('white');
-    }
-
-    .logo-link {
-      .background { fill: color('white'); }
-      .text { fill: color('blue'); }
-    }
-  }
-}
