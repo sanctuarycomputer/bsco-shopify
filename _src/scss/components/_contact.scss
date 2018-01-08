@@ -6,4 +6,10 @@
       padding: 1em 2em;
     }
   }
+
+  @media #{$medium-up} {
+    .contact-section {
+      margin-top: 8em;
+    }
+  }
 }
