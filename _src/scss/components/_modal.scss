@@ -13,6 +13,16 @@
     .contents {
       opacity: 1;
     }
+    .close-modal {
+      display: block;
+    }
+  }
+
+  .close-modal {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
   .contents {
@@ -23,7 +33,7 @@
 
     /* Specific to the Newsletter Variant */
     .newsletter-modal-inner {
-      overflow: scroll;
+      overflow: auto;
       background-color: white;
       max-height: 80vh;
       .image {

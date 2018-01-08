@@ -12,7 +12,7 @@
 {% elsif min <= 0 and hour > 0 %}
   {% assign upsell_index = 2 %}
 {% else %}
-  {% assign upsell_index = 3 %}
+  {% assign upsell_index = 0 %}
 {% endif %}
 
 {% if upsell_index > upsell_products.length %}

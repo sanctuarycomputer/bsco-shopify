@@ -1,9 +1,9 @@
-<div class="homepage-butter-module col-12">
+<div class="homepage-infuse-module col-12">
   <div class="columns-wrapper border-top std-max-width mx-auto md-flex clearfix">
     <div class="left-section border-right-dashed col md-col-5 flex flex-column items-center justify-evenly">
       <img class="col-5" src="{{ 'butter-pad.jpg' | asset_url }}" />
       <div class="link-text center">
-        <a class="center inline-block" href="{{section.settings.butter_link}}" target="_blank">
+        <a class="center inline-block" href="{{section.settings.infuse_link}}" target="_blank">
           <span class="link-text bebas black block">{{section.settings.link_text_one}}</span>
           <span class="link-text bebas black block">{{section.settings.link_text_two}}</span>
         </a>
@@ -15,7 +15,7 @@
     </div>
 
     <div class="link-text-mobile center py2">
-      <a class="center inline-block" href="{{section.settings.butter_link}}" target="_blank">
+      <a class="center inline-block" href="{{section.settings.infuse_link}}" target="_blank">
         <span class="link-text bebas black block">{{section.settings.link_text_one}}</span>
         <span class="link-text bebas black block">{{section.settings.link_text_two}}</span>
       </a>
@@ -25,7 +25,7 @@
 
 {% schema %}
   {
-    "name": "Homepage Butter Module",
+    "name": "Homepage Infuse Module",
     "settings": [
       {
         "type": "text",
@@ -41,8 +41,8 @@
       },
       {
         "type": "url",
-        "id": "butter_link",
-        "label": "Butter Link"
+        "id": "infuse_link",
+        "label": "Infuse Link"
       },
       {
         "type": "image_picker",
@@ -52,7 +52,7 @@
     ],
     "presets": [
       {
-        "name": "Homepage Butter Module",
+        "name": "Homepage Infuse Module",
         "category": "Homepage"
       }
     ]

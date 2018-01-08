@@ -44,7 +44,7 @@
 @import 'components/homepage-hero';
 @import 'components/homepage-press';
 @import 'components/homepage-blog-callout';
-@import 'components/homepage-butter-module';
+@import 'components/homepage-infuse-module';
 @import 'components/homepage-video-module';
 @import 'components/homepage-health-module';
 @import 'components/homepage-supply-module';
@@ -52,6 +52,13 @@
 @import 'components/product-hero-details-card';
 @import 'components/product-infuse-module';
 @import 'components/product-healthy-module';
+
+
+/**
+  * Theme-specific overrides
+  *
+  **/
+@import 'themes/site-blue';
 
 
 /**

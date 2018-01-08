@@ -28,7 +28,10 @@
       </a>
     </div>
     <div class="product-description md-hide sm-hide xs-hide">
-      <span class="bebas mono copy">{{ item.product.description | strip_html | truncatewords: 9 }}</span>
+      <span class="bebas mono copy">
+        <span>{{ item.product.description | strip_html | truncatewords: 9 }}</span>
+        <a href="{{ item.product.url }}">Read More</a>
+      </span>
     </div>
 
     <div class="line-item-ui col col-12 clearfix">
