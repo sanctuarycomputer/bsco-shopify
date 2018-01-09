@@ -4,11 +4,16 @@
 
   @media #{$medium-up} {
     border-bottom-width: $border-weight-desktop;
+    margin-right: 2em;
     position: absolute;
     right: 0;
     top: 50%;
     transform: translate3d(0, -50%, 0);
     width: 420px;
+  }
+
+  @media #{$xlarge-up} {
+    margin-right: 0;
   }
 
   .product-detail {
