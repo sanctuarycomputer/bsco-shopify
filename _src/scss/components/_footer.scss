@@ -1,9 +1,16 @@
 footer {
-  @media #{$medium-up} {
-    .copyright { text-align: left; }
+  @media #{$large-up} {
+    .copyright { 
+      padding: 0;
+      text-align: left;
+    }
     .socials { 
       padding: 0;
       text-align: right;
     }
+  }
+
+  @media #{$medium-large-only} {
+    padding: 2em;    
   }
 }

@@ -2,7 +2,7 @@
   <div class="grid-container std-max-width mx-auto flex border-top border-right border-left">
     {% for product in collections.frontpage.products %}
       <div class="grid-item flex col-12">
-        <div class="image-container bg-blue col-4 md-col-12 height-100 relative">
+        <div class="image-container bg-blue col-4 md-col-12 relative">
           <a class="no-style" href="{{ product.url }}">
             {% include 'product-grid-image' %}
             <span class="product-title-overlay center">
