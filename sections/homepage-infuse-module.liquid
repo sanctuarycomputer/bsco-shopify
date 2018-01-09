@@ -1,12 +1,14 @@
 <div class="homepage-infuse-module col-12">
   <div class="columns-wrapper border-top std-max-width mx-auto md-flex clearfix">
-    <div class="left-section border-right-dashed col md-col-5 flex flex-column items-center justify-evenly">
-      <img class="col-5" src="{{ 'butter-pad.jpg' | asset_url }}" />
-      <div class="link-text center">
-        <a class="center inline-block" href="{{section.settings.infuse_link}}" target="_blank">
-          <span class="link-text bebas black block">{{section.settings.link_text_one}}</span>
-          <span class="link-text bebas black block">{{section.settings.link_text_two}}</span>
-        </a>
+    <div class="left-section border-right-dashed col md-col-5 flex flex-column items-center relative">
+      <div class="absolute-center col-12 center p2">
+        <img class="col-5" src="{{ 'butter-pad.jpg' | asset_url }}" />
+        <div class="link-text center mt3">
+          <a class="center inline-block" href="{{section.settings.infuse_link}}" target="_blank">
+            <span class="link-text bebas black block">{{section.settings.link_text_one}}</span>
+            <span class="link-text bebas black block">{{section.settings.link_text_two}}</span>
+          </a>
+        </div>
       </div>
     </div>
 
