@@ -26,9 +26,12 @@ class QuantitySpinner {
   update(e, action) {
     const $this     = e.currentTarget;
     const product   = $this.dataset.product;
-    const $quantity = document.querySelector(`[data-quantity="${product}"`);
+
+    const dataSelector  = '[data-quantity="' + product + '"]';
+    const $quantity = document.querySelector(dataSelector);
     const original  = $quantity.value;
-    const $target   = document.getElementById(`quantity-target-${product}`);
+    const selector  = 'quantity-target-' + product;
+    const $target   = document.getElementById(selector);
 
     if ($quantity.id.split('_')[0] == 'updates') {
       axios.post('/cart/change.js', {
