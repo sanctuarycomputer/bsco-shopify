@@ -3,7 +3,7 @@
 {% endunless %}
 
 <div class="center" data-price-wrapper>
-  <span class="inline-block mt1 bebas link-text spacing-1 {{ classes }}" data-product-price>
+  <span id="product-price" data-original="{{ original_price }}" class="inline-block mt1 bebas link-text spacing-1 {{ classes }}" data-product-price>
     {{ price | money }}
   </span>
 

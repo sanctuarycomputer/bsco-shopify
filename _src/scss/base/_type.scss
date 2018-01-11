@@ -1,9 +1,10 @@
-$bebas: 'Bebas Neue', Helvetica Neue, helvetica, sans-serif;
+$bebas: 'bebas-neue', Helvetica Neue, helvetica, sans-serif;
 $helvetica: Helvetica Neue, helvetica, sans-serif;
 $mono: 'GT America Mono', monospace;
 
 .bebas {
   font-family: $bebas;
+  font-weight: normal;
 }
 
 .helvetica {
