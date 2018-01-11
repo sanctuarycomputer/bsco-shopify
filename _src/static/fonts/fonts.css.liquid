@@ -1,24 +1,4 @@
 @font-face {
-  font-family: 'Bebas Neue';
-  src: url("{{ 'BebasNeueBold.eot' | asset_url }}"); /* IE9 Compat Modes */
-  src: url("{{ 'BebasNeueBold.eot' | asset_url }}?#iefix") format('embedded-opentype'), /* IE6-IE8 */
-       url("{{ 'BebasNeueBold.woff2' | asset_url }}") format('woff2'), /* Super Modern Browsers */
-       url("{{ 'BebasNeueBold.woff' | asset_url }}") format('woff'), /* Pretty Modern Browsers */
-       url("{{ 'BebasNeueBold.ttf' | asset_url }}")  format('truetype'), /* Safari, Android, iOS */
-       url("{{ 'BebasNeueBold.svg' | asset_url }}#Bebas Neue") format('svg'); /* Legacy iOS */
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* fixes choppy text in chrome */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'Bebas Neue';
-    src: url("{{ 'BebasNeueBold.svg' | asset_url }}") format('svg');
-  }
-}
-
-@font-face {
   font-family: 'GT America Mono';
   src: url("{{ 'GTAmericaMonoRegularV2.eot' | asset_url }}"); /* IE9 Compat Modes */
   src: url("{{ 'GTAmericaMonoRegularV2.eot' | asset_url }}?#iefix") format('embedded-opentype'), /* IE6-IE8 */
