@@ -15,10 +15,10 @@
     "exports-loader": "^0.6.4",
     "imports-loader": "^0.7.1",
     "node-sass": "^4.7.2",
-    "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1",
     "postcss-cli": "^2.6.0",
-    "webpack": "^2.7.0"
+    "webpack": "^2.7.0",
+    "yarn-run-all": "^3.1.1"
   },
   "babel": {
     "presets": [
@@ -28,7 +28,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod:css": "node-sass _src/scss/app.scss | postcss -u autoprefixer | cleancss -O1 optimizeFontWeight:off --skip-rebase -o ./assets/bsco.css",
-    "watch:prod:css": "onchange '_src/scss/**/*.scss' -- npm run prod:css",
+    "watch:prod:css": "onchange '_src/scss/**/*.scss' -- yarn prod:css",
     "watch:prod:js": "webpack --progress --watch",
     "watch:theme-dev": "theme watch --force -e development",
     "start": "npm-run-all -p watch:prod:css watch:prod:js watch:theme-dev"

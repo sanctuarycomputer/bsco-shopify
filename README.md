@@ -10,9 +10,9 @@
 
 ##### Install Packages
 
-    npm install
+    yarn
 
-Make sure that Webpack, PostCSS CLI, Node-SASS, and CleanCSS CLI are properly installed for CLI usage by `npm scripts`.
+Make sure that Webpack, PostCSS CLI, Node-SASS, and CleanCSS CLI are properly installed for CLI usage by `package.json`'s scripts.
 
 ##### ThemeKit Setup
 
@@ -29,4 +29,4 @@ Create a new API identity on [Shopify Private App Manager](https://the-baking-su
 
 ### 2. Up and Running
 
-You now have everything you need to make changes to the live theme. Simply running `npm start` will compile all SCSS and JS source files along with uploading all asset and template file changes to Shopify.
+You now have everything you need to make changes to the live theme. Simply running `yarn start` will compile all SCSS and JS source files along with uploading all asset and template file changes to Shopify.
