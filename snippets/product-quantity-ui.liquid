@@ -4,10 +4,10 @@
 
 {% unless update %}
   {% assign quantity_id   = 'quantity-' | append: product.id %}
-  {% assign quantity_name = 'updates[]' %}
+  {% assign quantity_name = 'quantity' %}
 {% else %}
   {% assign quantity_id = 'updates_' | append: product.key %}
-  {% assign quantity_name = 'quantity' %}
+  {% assign quantity_name = 'updates[]' %}
   {% assign quantity_line = forloop.index %}
 {% endunless %}
 

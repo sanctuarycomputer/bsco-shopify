@@ -32,6 +32,7 @@ class QuantitySpinner {
     const original  = $quantity.value;
     const selector  = 'quantity-target-' + product;
     const $target   = document.getElementById(selector);
+    const $price   = document.getElementById('product-price');
 
     if ($quantity.id.split('_')[0] == 'updates') {
       axios.post('/cart/change.js', {
@@ -46,9 +47,11 @@ class QuantitySpinner {
       });
     }
 
-    const quantity  = (action == 'increment') ? this.increment($quantity.value) : this.decrement($quantity.value);
+    const quantity = (action == 'increment') ? this.increment($quantity.value) : this.decrement($quantity.value);    
+    const newPrice = '$' + (quantity * $price.dataset.original / 100).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
     $quantity.setAttribute('value', quantity);
+    $price.innerHTML = newPrice;
     $target.innerHTML = quantity;
   }
 

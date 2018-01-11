@@ -39,7 +39,7 @@
         {% include 'product-quantity-ui', quantity: item.quantity, update: true %}
       </div>
       <div class="line-item-price-wrapper col absolute right">
-        {% include 'product-price', current_variant: item.variant, classes: 'subtitle', price: line_price %}
+        {% include 'product-price', current_variant: item.variant, classes: 'subtitle', price: line_price, original_price: item.variant.price %}
       </div>
     </div>
   </div>

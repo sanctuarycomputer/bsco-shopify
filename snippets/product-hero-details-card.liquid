@@ -67,11 +67,11 @@
 
           <div class="clearfix">
             <div class="product-quantity col col-8 border-right">
-              {% include 'product-quantity-ui', update: true %}
+              {% include 'product-quantity-ui', update: false %}
             </div>
 
             <div class="product-price col col-4 right-align p2">
-              {% include 'product-price' %}
+              {% include 'product-price', original_price: product.price %}
             </div>
           </div>
       </div>
