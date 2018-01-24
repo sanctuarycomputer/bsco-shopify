@@ -1,27 +1,39 @@
 <div id="supply" class="homepage-supply-module col-12">
-  <div class="grid-container std-max-width mx-auto flex border-top border-right border-left">
-    {% for product in collections.frontpage.products %}
-      <div class="grid-item flex col-12">
-        <div class="image-container bg-blue col-4 md-col-12 relative">
-          <a class="no-style" href="{{ product.url }}">
-            {% include 'product-grid-image' %}
-            <span class="product-title-overlay center">
-              <h4 class="mono red black m0 shadow">{{ product.title }}</h4>
-              <span class="inline-block mx-auto mono red shadow copy mt2">More Info</span>
-            </span>
-          </a>
+  <div class="my3 center">
+    <h3 class="bebas">Shop our treats</h3>
+  </div>
+  <div class="relative">
+    <div class="absolute border-top col-10 std-max-width right-0"></div>
+    <div class="grid-container std-max-width mx-auto flex border">
+      {% for product in collections.frontpage.products %}
+        <div class="grid-item flex col-12">
+          <div class="image-container bg-blue col-4 md-col-12 relative">
+            <a class="no-style" href="{{ product.url }}">
+              {% include 'product-grid-image' %}
+              <span class="product-title-overlay center">
+                <h4 class="mono red black m0 shadow">{{ product.title }}</h4>
+                <span class="inline-block mx-auto mono red shadow copy mt2">More Info</span>
+              </span>
+            </a>
+          </div>
+          <div class="col-8 md-col-12 relative">
+            <a class="button-link no-style relative col-12 inline-block flex justify-center items-center center" href="/cart/add/{{ product.selected_or_first_available_variant.id }}">
+              <span class="button-text link-text bebas black m0 p2 mt1 col-12">{{ product.metafields.product_grid.cta }}</span>
+              <button class="quick-add col-12">Quick Add - {{ product.price | money }}</button>
+            </a>
+            <a class="absolute-center block col-10 md-hide lg-hide xl-hide" href="{{ product.url }}">
+              <h4 class="mono red copy">{{ product.title }}</h4>
+            </a>
+          </div>
         </div>
-        <div class="col-8 md-col-12 relative">
-          <a class="button-link no-style relative col-12 inline-block flex justify-center items-center center" href="/cart/add/{{ product.selected_or_first_available_variant.id }}">
-            <span class="button-text link-text bebas black m0 p2 mt1 col-12">{{ product.metafields.product_grid.cta }}</span>
-            <button class="quick-add col-12">Quick Add - {{ product.price | money }}</button>
-          </a>
-          <a class="absolute-center block col-10 md-hide lg-hide xl-hide" href="{{ product.url }}">
-            <h4 class="mono red copy">{{ product.title }}</h4>
-          </a>
-        </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
+    <div class="absolute border-bottom col-10 std-max-width bottom-0"></div>
+  </div>
+  <div class="dripping-eye-spacer my4">
+    <div class="col-1 mx-auto">
+      {% include 'dripping-eye-pink' %}
+    </div>
   </div>
 </div>
 
