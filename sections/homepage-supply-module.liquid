@@ -17,9 +17,9 @@
             </a>
           </div>
           <div class="col-8 md-col-12 relative">
-            <a class="button-link no-style relative col-12 inline-block flex justify-center items-center center" href="/cart/add/{{ product.selected_or_first_available_variant.id }}">
-              <span class="button-text link-text bebas black m0 p2 mt1 col-12">{{ product.metafields.product_grid.cta }}</span>
-              <button class="quick-add col-12">Quick Add - {{ product.price | money }}</button>
+            <a class="button-link no-style relative col-12 inline-block flex justify-center items-center center" href="{{ product.url }}">
+              <span class="button-text copy spacing-1 bebas black m0 p2 mt1 col-12">{{ product.title }}</span>
+              <button class="quick-add col-12">Show Me The Details</button>
             </a>
             <a class="absolute-center block col-10 md-hide lg-hide xl-hide" href="{{ product.url }}">
               <h4 class="mono red copy">{{ product.title }}</h4>
