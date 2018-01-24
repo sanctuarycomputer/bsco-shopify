@@ -1,6 +1,10 @@
 <div id="supply" class="homepage-supply-module col-12">
   <div class="my2 py1 center">
-    <h3 class="bebas">Shop our treats</h3>
+    {% unless template == 'list-collections' %}
+      <h3 class="bebas">Shop our treats</h3>
+    {% else %}
+      <h1 class="bebas">Shop our treats</h1>
+    {% endunless %}
   </div>
   <div class="relative">
     <div class="absolute border-top col-10 std-max-width right-0"></div>
@@ -30,11 +34,19 @@
     </div>
     <div class="absolute border-bottom col-10 std-max-width bottom-0"></div>
   </div>
-  <div class="dripping-eye-spacer my4">
-    <div class="col-3 md-col-1 mx-auto">
-      {% include 'dripping-eye-pink' %}
+
+  {% unless template == 'list-collections' %}
+    <div class="dripping-eye-spacer my4">
+      <div class="col-3 md-col-1 mx-auto">
+        {% include 'dripping-eye-pink' %}
+      </div>
     </div>
-  </div>
+  {% else %}
+    <div class="col-12 md-col-8 lg-col-5 my4 mx-auto center px2">
+      <h3 class="bebas subtitle mb2">Everything But the herb</h3>
+      <p class="copy">Use whichever herb makes you happiest. Our kits have everything you need for a successful home infusion (or not!).</p>
+    </div>
+  {% endunless %}
 </div>
 
 {% schema %}
